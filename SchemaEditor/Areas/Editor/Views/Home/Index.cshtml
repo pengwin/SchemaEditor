@@ -9,16 +9,19 @@
     <title>Editor</title>
     <link href='http://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet'  type='text/css'>
     <link href="@Url.Content("~/Content/Editor.css")" rel="stylesheet" type="text/css">
-    <link href="@Url.Content("~/Content/PopUpForm.css")" rel="stylesheet" type="text/css">
+    <link href="@Url.Content("~/Content/PopupTemplate.css")" rel="stylesheet" type="text/css">
     
     @if (Html.IsDebugBuild()) {
     <!-- development libs block-->
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/jquery-1.7.1.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/underscore.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/json2.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/backbone.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/jquery-1.7.1.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/raphael.js")"></script>
     <!-- development libs block end -->
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/EditorApp.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/PopupView.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Editor.js")"></script>
     } 
 </head>
 <body>
@@ -58,15 +61,15 @@
     </ul>
     </footer>
 
-    @Html.Partial("_PopUpForm")
+    @Html.Partial("_PopupTemplate")
 </body>
     @if (Html.IsReleaseBuild())
     {
     <!-- production libs block -->
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Production/jquery-1.7.1.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Production/underscore-min.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/json2.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Production/backbone-min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Production/jquery-1.7.1.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Production/raphael-min.js")"></script>
     <!-- production libs block end -->
     }

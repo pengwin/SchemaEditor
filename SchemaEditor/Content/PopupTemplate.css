@@ -20,18 +20,19 @@
 }
 .popup
 {
+    min-width: 300px;
     display: inline-block;
     position: relative;
     background: #efefef;
     vertical-align: middle;
 }
 
-#pop_up_content
+#popup_content
 {
     padding: 20px;
 }
 
-#pop_up_controls
+#popup_controls
 {
     background: #808080;
 }
