@@ -15,7 +15,7 @@ namespace SchemaEditor.Helpers
         /// </summary>
         /// <param name="helper"></param>
         /// <returns>true if this is release build (DEBUG constant isn't set in configuration)</returns>
-        public static bool IsReleaseBuild(this HtmlHelper helper)
+        public static bool IsReleaseBuild<TModel>(this HtmlHelper<TModel> helper)
         {
 #if DEBUG
             return false;
@@ -29,7 +29,7 @@ namespace SchemaEditor.Helpers
         /// </summary>
         /// <param name="helper"></param>
         /// <returns>true if this is debug version (DEBUG constant is set in configuration)</returns>
-        public static bool IsDebugBuild(this HtmlHelper helper)
+        public static bool IsDebugBuild<TModel>(this HtmlHelper<TModel> helper)
         {
 #if DEBUG
             return true;
