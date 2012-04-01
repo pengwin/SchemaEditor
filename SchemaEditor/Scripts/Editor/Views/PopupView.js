@@ -8,28 +8,49 @@ Editor.Views = (function (parent) {
     */
     parent.PopupView = Backbone.View.extend({
 
-        className: 'popup',
-
-        events: {
-            'click #popup_ok': 'ok'
-        },
-
         /**
         * constructor
         */
         initialize: function (attrs) {
+
             if (attrs && attrs.template) {
                 this.template = attrs.template;
             }
-            this.context = {
-                title: 'Welcome',
-                content: 'Welcome string'
-            };
+            else {
+                // set default template
+                this.template = $("#test_popup_template").html();
+            }
+
+            if (attrs && attrs.context) {
+                this.context = attrs.context;
+            }
+            else {
+                // set default context
+                this.context = {
+                    title: 'Test',
+                    content: 'Test message'
+                };
+            }
+
             this.el = $("#popup_content");
 
             this._overlay = $(".popup__overlay");
             this._ok = $("#popup_ok");
             this._cancel = $("#popup_cancel");
+
+            _.extend(this, Backbone.Events);
+
+            this.on("ok", this.ok );
+
+            this.on("cancel",this.cancel );
+
+            var instance = this;
+            this._ok.click(function () {
+                instance.trigger("ok", instance);
+            });
+            this._cancel.click(function () {
+                instance.trigger("cancel", instance);
+            });
 
             this.render();
         },
@@ -58,10 +79,20 @@ Editor.Views = (function (parent) {
         hide: function () {
             this._overlay.css('display', 'none');
         },
-
-        ok: function () {
-
-        }
+          
+        /**
+        * Button OK click handler
+        */
+        ok : function (sender) {
+                sender.hide();
+            },
+            
+        /**
+        * Button Cancel click handler
+        */
+        cancel: function (sender) {
+                sender.hide();
+            }  
     });
     return parent;
 } (Editor.Views || {}));
