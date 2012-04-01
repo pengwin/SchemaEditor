@@ -8,7 +8,6 @@ using System.Web.Routing;
 namespace SchemaEditor
 {
     
-
     public class MvcApplication : System.Web.HttpApplication
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)

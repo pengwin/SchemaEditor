@@ -67,11 +67,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DebugHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Editor.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Lib\Development\backbone.js" />
+    <Content Include="Scripts\Lib\Development\jquery-1.7.1.js" />
+    <Content Include="Scripts\Lib\Development\qunit.js" />
+    <Content Include="Scripts\Lib\Development\raphael.js" />
+    <Content Include="Scripts\Lib\Development\underscore.js" />
+    <Content Include="Scripts\Lib\json2.js" />
+    <Content Include="Scripts\Lib\Production\backbone-min.js" />
+    <Content Include="Scripts\Lib\Production\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\Lib\Production\raphael-min.js" />
+    <Content Include="Scripts\Lib\Production\underscore-min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -89,7 +101,6 @@
     <Folder Include="Areas\Editor\Views\Shared\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

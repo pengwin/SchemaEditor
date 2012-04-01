@@ -2,15 +2,67 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
-
+<!DOCTYPE HTML>
 <html>
 <head>
-    <title>Index</title>
+    <title>Editor</title>
+    <link href='http://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet'  type='text/css'>
+    <link href="@Url.Content("~/Content/component_editor.css")" rel="stylesheet" type="text/css">
+    <!-- development libs block-->
+    @{#if DEBUG}
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/underscore.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/json2.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/backbone.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/jquery-1.7.1.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/raphael.js")"></script>
+    @{#endif}
+    <!-- development libs block end -->
 </head>
 <body>
-    <div>
-        
+    <div id="notification"></div>
+    <header>
+    <div id="tools" class="actions_block">
+        <div class="action">
+            <input id="pack_rect" type="radio" name="tool">
+            <label class="action_label" for="pack_rect">Draw:<br/>Rectangle<br/>Package</label>
+        </div>
+        <div class="action">
+            <input id="pack_circle" type="radio" name="tool">
+            <label class="action_label" for="pack_circle">Draw:<br/>Round<br/>Package</label>
+        </div>
+        <div class="action">
+            <input id="action_move" type="radio" name="tool">
+            <label class="action_label" for="action_move">Action:<br/>Move<br/>Element</label>
+        </div>
+        <div class="action">
+            <input id="action_delete" type="radio" name="tool">
+            <label class="action_label" for="action_delete">Action:<br/>Delete<br/>Element</label>
+        </div>
+        <div class="action">
+            <input id="action_edit" type="radio" name="tool">
+            <label class="action_label" for="action_edit">Action:<br/>Edit<br/>Element</label>
+        </div>
     </div>
+    </header>
+    <section id="content">
+    <div id="blueprint">No blueprint</div>
+    </section>
+    <footer>
+    <div id="history" class="actions_block">
+        <div class="action" >
+            <div class="action_label">Undo:<br/>Empty<br/>History</div>
+        </div>
+    </div>
+    
+    </footer>
 </body>
+    @{#if (!DEBUG)}
+    <!-- production libs block -->
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Production/underscore-min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/json2.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Production/backbone-min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Production/jquery-1.7.1.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Production/raphael-min.js")"></script>
+    <!-- production libs block end -->
+    @{#endif}
 </html>
