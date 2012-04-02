@@ -7,6 +7,7 @@
         var testBenchName = 'test_workbench';
         var testBenchId = "#" + testBenchName;
         var testBenchTag = "div" + testBenchId;
+        var getGridElement = function () { return $(testBenchTag + " svg path#grid"); };
         var paper;
 
         module("GridView Tests", {
@@ -76,7 +77,7 @@
         var expected_paths_VML_syntax = {
             expected_step_5: "M 0 0 L 0 400 M 5 0 L 5 400 M 10 0 L 10 400 M 15 0 L 15 400 M 20 0 L 20 400 M 25 0 L 25 400 M 30 0 L 30 400 M 35 0 L 35 400 M 40 0 L 40 400 M 45 0 L 45 400 M 50 0 L 50 400 M 55 0 L 55 400 M 60 0 L 60 400 M 65 0 L 65 400 M 70 0 L 70 400 M 75 0 L 75 400 M 80 0 L 80 400 M 85 0 L 85 400 M 90 0 L 90 400 M 95 0 L 95 400 M 100 0 L 100 400 M 105 0 L 105 400 M 110 0 L 110 400 M 115 0 L 115 400 M 120 0 L 120 400 M 125 0 L 125 400 M 130 0 L 130 400 M 135 0 L 135 400 M 140 0 L 140 400 M 145 0 L 145 400 M 150 0 L 150 400 M 155 0 L 155 400 M 160 0 L 160 400 M 165 0 L 165 400 M 170 0 L 170 400 M 175 0 L 175 400 M 180 0 L 180 400 M 185 0 L 185 400 M 190 0 L 190 400 M 195 0 L 195 400 M 200 0 L 200 400 M 205 0 L 205 400 M 210 0 L 210 400 M 215 0 L 215 400 M 220 0 L 220 400 M 225 0 L 225 400 M 230 0 L 230 400 M 235 0 L 235 400 M 240 0 L 240 400 M 245 0 L 245 400 M 250 0 L 250 400 M 255 0 L 255 400 M 260 0 L 260 400 M 265 0 L 265 400 M 270 0 L 270 400 M 275 0 L 275 400 M 280 0 L 280 400 M 285 0 L 285 400 M 290 0 L 290 400 M 295 0 L 295 400 M 300 0 L 300 400 M 305 0 L 305 400 M 310 0 L 310 400 M 315 0 L 315 400 M 320 0 L 320 400 M 325 0 L 325 400 M 330 0 L 330 400 M 335 0 L 335 400 M 340 0 L 340 400 M 345 0 L 345 400 M 350 0 L 350 400 M 355 0 L 355 400 M 360 0 L 360 400 M 365 0 L 365 400 M 370 0 L 370 400 M 375 0 L 375 400 M 380 0 L 380 400 M 385 0 L 385 400 M 390 0 L 390 400 M 395 0 L 395 400 M 400 0 L 400 400 M 0 0 L 400 0 M 0 5 L 400 5 M 0 10 L 400 10 M 0 15 L 400 15 M 0 20 L 400 20 M 0 25 L 400 25 M 0 30 L 400 30 M 0 35 L 400 35 M 0 40 L 400 40 M 0 45 L 400 45 M 0 50 L 400 50 M 0 55 L 400 55 M 0 60 L 400 60 M 0 65 L 400 65 M 0 70 L 400 70 M 0 75 L 400 75 M 0 80 L 400 80 M 0 85 L 400 85 M 0 90 L 400 90 M 0 95 L 400 95 M 0 100 L 400 100 M 0 105 L 400 105 M 0 110 L 400 110 M 0 115 L 400 115 M 0 120 L 400 120 M 0 125 L 400 125 M 0 130 L 400 130 M 0 135 L 400 135 M 0 140 L 400 140 M 0 145 L 400 145 M 0 150 L 400 150 M 0 155 L 400 155 M 0 160 L 400 160 M 0 165 L 400 165 M 0 170 L 400 170 M 0 175 L 400 175 M 0 180 L 400 180 M 0 185 L 400 185 M 0 190 L 400 190 M 0 195 L 400 195 M 0 200 L 400 200 M 0 205 L 400 205 M 0 210 L 400 210 M 0 215 L 400 215 M 0 220 L 400 220 M 0 225 L 400 225 M 0 230 L 400 230 M 0 235 L 400 235 M 0 240 L 400 240 M 0 245 L 400 245 M 0 250 L 400 250 M 0 255 L 400 255 M 0 260 L 400 260 M 0 265 L 400 265 M 0 270 L 400 270 M 0 275 L 400 275 M 0 280 L 400 280 M 0 285 L 400 285 M 0 290 L 400 290 M 0 295 L 400 295 M 0 300 L 400 300 M 0 305 L 400 305 M 0 310 L 400 310 M 0 315 L 400 315 M 0 320 L 400 320 M 0 325 L 400 325 M 0 330 L 400 330 M 0 335 L 400 335 M 0 340 L 400 340 M 0 345 L 400 345 M 0 350 L 400 350 M 0 355 L 400 355 M 0 360 L 400 360 M 0 365 L 400 365 M 0 370 L 400 370 M 0 375 L 400 375 M 0 380 L 400 380 M 0 385 L 400 385 M 0 390 L 400 390 M 0 395 L 400 395 M 0 400 L 400 400",
             expected_width_100: "M 0 0 L 0 400 M 5 0 L 5 400 M 10 0 L 10 400 M 15 0 L 15 400 M 20 0 L 20 400 M 25 0 L 25 400 M 30 0 L 30 400 M 35 0 L 35 400 M 40 0 L 40 400 M 45 0 L 45 400 M 50 0 L 50 400 M 55 0 L 55 400 M 60 0 L 60 400 M 65 0 L 65 400 M 70 0 L 70 400 M 75 0 L 75 400 M 80 0 L 80 400 M 85 0 L 85 400 M 90 0 L 90 400 M 95 0 L 95 400 M 100 0 L 100 400 M 0 0 L 400 0 M 0 5 L 400 5 M 0 10 L 400 10 M 0 15 L 400 15 M 0 20 L 400 20 M 0 25 L 400 25 M 0 30 L 400 30 M 0 35 L 400 35 M 0 40 L 400 40 M 0 45 L 400 45 M 0 50 L 400 50 M 0 55 L 400 55 M 0 60 L 400 60 M 0 65 L 400 65 M 0 70 L 400 70 M 0 75 L 400 75 M 0 80 L 400 80 M 0 85 L 400 85 M 0 90 L 400 90 M 0 95 L 400 95 M 0 100 L 400 100 M 0 105 L 400 105 M 0 110 L 400 110 M 0 115 L 400 115 M 0 120 L 400 120 M 0 125 L 400 125 M 0 130 L 400 130 M 0 135 L 400 135 M 0 140 L 400 140 M 0 145 L 400 145 M 0 150 L 400 150 M 0 155 L 400 155 M 0 160 L 400 160 M 0 165 L 400 165 M 0 170 L 400 170 M 0 175 L 400 175 M 0 180 L 400 180 M 0 185 L 400 185 M 0 190 L 400 190 M 0 195 L 400 195 M 0 200 L 400 200 M 0 205 L 400 205 M 0 210 L 400 210 M 0 215 L 400 215 M 0 220 L 400 220 M 0 225 L 400 225 M 0 230 L 400 230 M 0 235 L 400 235 M 0 240 L 400 240 M 0 245 L 400 245 M 0 250 L 400 250 M 0 255 L 400 255 M 0 260 L 400 260 M 0 265 L 400 265 M 0 270 L 400 270 M 0 275 L 400 275 M 0 280 L 400 280 M 0 285 L 400 285 M 0 290 L 400 290 M 0 295 L 400 295 M 0 300 L 400 300 M 0 305 L 400 305 M 0 310 L 400 310 M 0 315 L 400 315 M 0 320 L 400 320 M 0 325 L 400 325 M 0 330 L 400 330 M 0 335 L 400 335 M 0 340 L 400 340 M 0 345 L 400 345 M 0 350 L 400 350 M 0 355 L 400 355 M 0 360 L 400 360 M 0 365 L 400 365 M 0 370 L 400 370 M 0 375 L 400 375 M 0 380 L 400 380 M 0 385 L 400 385 M 0 390 L 400 390 M 0 395 L 400 395 M 0 400 L 400 400",
-            expected_height_100: "M 0 0 L 0 100 M 5 0 L 5 100 M 10 0 L 10 100 M 15 0 L 15 100 M 20 0 L 20 100 M 25 0 L 25 100 M 30 0 L 30 100 M 35 0 L 35 100 M 40 0 L 40 100 M 45 0 L 45 100 M 50 0 L 50 100 M 55 0 L 55 100 M 60 0 L 60 100 M 65 0 L 65 100 M 70 0 L 70 100 M 75 0 L 75 100 M 80 0 L 80 100 M 85 0 L 85 100 M 90 0 L 90 100 M 95 0 L 95 100 M 100 0 L 100 100 M 0 0 L 100 0 M 0 5 L 100 5 M 0 10 L 100 10 M 0 15 L 100 15 M 0 20 L 100 20 M 0 25 L 100 25 M 0 30 L 100 30 M 0 35 L 100 35 M 0 40 L 100 40 M 0 45 L 100 45 M 0 50 L 100 50 M 0 55 L 100 55 M 0 60 L 100 60 M 0 65 L 100 65 M 0 70 L 100 70 M 0 75 L 100 75 M 0 80 L 100 80 M 0 85 L 100 85 M 0 90 L 100 90 M 0 95 L 100 95 M 0 100 L 100 100" 
+            expected_height_100: "M 0 0 L 0 100 M 5 0 L 5 100 M 10 0 L 10 100 M 15 0 L 15 100 M 20 0 L 20 100 M 25 0 L 25 100 M 30 0 L 30 100 M 35 0 L 35 100 M 40 0 L 40 100 M 45 0 L 45 100 M 50 0 L 50 100 M 55 0 L 55 100 M 60 0 L 60 100 M 65 0 L 65 100 M 70 0 L 70 100 M 75 0 L 75 100 M 80 0 L 80 100 M 85 0 L 85 100 M 90 0 L 90 100 M 95 0 L 95 100 M 100 0 L 100 100 M 0 0 L 100 0 M 0 5 L 100 5 M 0 10 L 100 10 M 0 15 L 100 15 M 0 20 L 100 20 M 0 25 L 100 25 M 0 30 L 100 30 M 0 35 L 100 35 M 0 40 L 100 40 M 0 45 L 100 45 M 0 50 L 100 50 M 0 55 L 100 55 M 0 60 L 100 60 M 0 65 L 100 65 M 0 70 L 100 70 M 0 75 L 100 75 M 0 80 L 100 80 M 0 85 L 100 85 M 0 90 L 100 90 M 0 95 L 100 95 M 0 100 L 100 100"
         };
 
         // set expected string for IE
@@ -92,8 +93,9 @@
             var grid = new GridView({ step: 5, width: 400, height: 400 });
             grid.renderTo(paper);
 
-            equal($(testBenchTag + " svg path#grid").length, 1, "test grid quantity==0 ");
-            equal($(testBenchTag + " svg path#grid").attr('d'), expected_paths.expected_step_5, "test grid path params");
+
+            equal(getGridElement().length, 1, "test grid quantity==0 ");
+            equal(getGridElement().attr('d'), expected_paths.expected_step_5, "test grid path params");
 
         });
 
@@ -102,22 +104,22 @@
             grid.renderTo(paper);
 
             grid.set({ step: 5 });
-            equal($(testBenchTag + " svg path#grid").attr('d'), expected_paths.expected_step_5, "test grid set step");
+            equal(getGridElement().attr('d'), expected_paths.expected_step_5, "test grid set step");
 
             grid.set({ width: 100 });
-            equal($(testBenchTag + " path#grid").attr('d'), expected_paths.expected_width_100, "test grid set width");
+            equal(getGridElement().attr('d'), expected_paths.expected_width_100, "test grid set width");
 
             grid.set({ height: 100 });
-            equal($(testBenchTag + " path#grid").attr('d'), expected_paths.expected_height_100, "test grid set height");
+            equal(getGridElement().attr('d'), expected_paths.expected_height_100, "test grid set height");
 
             grid.set({ color: 'green' });
-            equal($(testBenchTag + " path#grid").attr('stroke'), '#008000', "test grid set color");
+            equal(getGridElement().attr('stroke'), '#008000', "test grid set color");
 
             grid.set({ opacity: 0.1 });
-            equal($(testBenchTag + " path#grid").attr('stroke-opacity'), '0.1', "test grid set opacity");
+            equal(getGridElement().attr('stroke-opacity'), '0.1', "test grid set opacity");
 
             grid.set({ line_thickness: 0.1 });
-            equal($(testBenchTag + " path#grid").attr('stroke-width'), '0.1', "test grid set line thickness");
+            equal(getGridElement().attr('stroke-width'), '0.1', "test grid set line thickness");
 
         });
 

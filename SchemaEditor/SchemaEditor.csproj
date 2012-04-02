@@ -82,6 +82,8 @@
     <Content Include="Scripts\Editor\Views\GridView.js" />
     <Content Include="Scripts\Editor\Views\PopupView.js" />
     <Content Include="Scripts\Editor\Views\Tests\BlueprintViewTests.js" />
+    <Content Include="Scripts\Editor\Views\BorderView.js" />
+    <Content Include="Scripts\Editor\Views\Tests\BorderViewTests.js" />
     <Content Include="Scripts\Editor\Views\Tests\GridViewTests.js" />
     <Content Include="Scripts\Editor\Views\Tests\ViewTests.js" />
     <Content Include="Scripts\Lib\Development\backbone.js" />
