@@ -79,8 +79,10 @@
     <Content Include="Scripts\Editor\Editor.js" />
     <Content Include="Scripts\Editor\EditorApp.js" />
     <Content Include="Scripts\Editor\Views\BlueprintView.js" />
+    <Content Include="Scripts\Editor\Views\GridView.js" />
     <Content Include="Scripts\Editor\Views\PopupView.js" />
     <Content Include="Scripts\Editor\Views\Tests\BlueprintViewTests.js" />
+    <Content Include="Scripts\Editor\Views\Tests\GridViewTests.js" />
     <Content Include="Scripts\Editor\Views\Tests\ViewTests.js" />
     <Content Include="Scripts\Lib\Development\backbone.js" />
     <Content Include="Scripts\Lib\Development\jquery-1.7.1.js" />

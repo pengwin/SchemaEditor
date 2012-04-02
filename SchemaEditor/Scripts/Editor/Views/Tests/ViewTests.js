@@ -2,6 +2,7 @@
 
     var runTests = function () {
         Editor.Views.Test.BlueprintViewTests();
+        Editor.Views.Test.GridViewTests();
     };
 
     parent.runTests = runTests;

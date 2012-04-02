@@ -5,7 +5,7 @@
         /// Tests for <reference path="Editor.Views.BlueprintView"/>
         /// </summary>
 
-        var BlueprintView = Editor.Views.BlueprintView;
+        var BlueprintView = Editor.Views.BlueprintView; //alias
         var testBenchId = "#test_workbench";
         var testBenchTag = "div" + testBenchId;
 
@@ -46,8 +46,8 @@
             equal($(testBenchTag + " div.blueprint").height(), 300, "test div height");
 
             // test svg size
-            equal($(testBenchTag + " div.blueprint svg").width(), 250, "test svg width");
-            equal($(testBenchTag + " div.blueprint svg").height(), 300, "test svg height");
+            equal($(testBenchTag + " div.blueprint svg").attr('width'), 250, "test svg width");
+            equal($(testBenchTag + " div.blueprint svg").attr('height'), 300, "test svg height");
 
             clean();
         });
@@ -66,8 +66,8 @@
             equal($(testBenchTag + " div.blueprint").css('background-color'), "rgb(239, 239, 239)", "test div color");
 
             // test svg size
-            equal($(testBenchTag + " div.blueprint svg").width(), 250, "test set width: svg width");
-            equal($(testBenchTag + " div.blueprint svg").height(), 300, "test set height: svg height");
+            equal($(testBenchTag + " div.blueprint svg").attr('width'), 250, "test set width: svg width");
+            equal($(testBenchTag + " div.blueprint svg").attr('height'), 300, "test set height: svg height");
 
             blueprintView.set({ width: 450, height: 100 });
 
@@ -76,8 +76,8 @@
             equal($(testBenchTag + " div.blueprint").height(), 100, "test set width,height: div height");
 
             // test svg size
-            equal($(testBenchTag + " div.blueprint svg").width(), 450, "test set width,height: svg width");
-            equal($(testBenchTag + " div.blueprint svg").height(), 100, "test set width,height: svg height");
+            equal($(testBenchTag + " div.blueprint svg").attr('width'), 450, "test set width,height: svg width");
+            equal($(testBenchTag + " div.blueprint svg").attr('height'), 100, "test set width,height: svg height");
 
             clean();
         });
