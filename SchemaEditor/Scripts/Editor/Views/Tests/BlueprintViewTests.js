@@ -9,7 +9,7 @@
         var testBenchId = "#test_workbench";
         var testBenchTag = "div" + testBenchId;
         var getBlueprintDivElement = function () { return $(testBenchTag + " div.blueprint"); };
-        var getBlueprintSvgElement = function() { return $(testBenchTag + " div.blueprint svg"); };
+        var getBlueprintSvgElement = function () { return $(testBenchTag + " div.blueprint svg"); };
 
         module("BlueprintView Tests", {
             setup: function () {
@@ -35,7 +35,7 @@
         });
 
         test("blueprint size is set in constructor test", function () {
-            var blueprintView = new BlueprintView({ container: $(testBenchId), width: 250, height: 300 });
+            var blueprintView = new BlueprintView({ container: $(testBenchId), width: 250, height: 300, padding: 20 });
 
             // test div size
             equal(getBlueprintDivElement().width(), 250, "test div width");
@@ -47,8 +47,7 @@
         });
 
         test("blueprint set test", function () {
-            var blueprintView = new BlueprintView({ container: $(testBenchId) });
-
+            var blueprintView = new BlueprintView({ container: $(testBenchId), padding: 0 });
 
             blueprintView.set({ width: 250 });
             blueprintView.set({ height: 300 });
@@ -73,6 +72,10 @@
             // test svg size
             equal(getBlueprintSvgElement().attr('width'), 450, "test set width,height: svg width");
             equal(getBlueprintSvgElement().attr('height'), 100, "test set width,height: svg height");
+
+            blueprintView.set({ padding: 20 });
+            equal(getBlueprintDivElement().css('padding-left'), '20px', "test set padding: css padding-left test");
+            equal(getBlueprintDivElement().css('padding-top'), '20px', "test set padding: css padding-topt test");
         });
 
         asyncTest("blueprint mouse click async test", function () {

@@ -14,6 +14,7 @@
             this.width = 1;
             this.height = 1;
             this.color = 'white';
+            this.padding = 5;
         },
 
         initialize: function (attr) {
@@ -62,6 +63,10 @@
                 this.color = attr.color;
                 $(this.el).css('background-color', this.color);
             }
+            if (typeof (attr.padding) !== 'undefined') {
+                this.padding = attr.padding;
+                $(this.el).css('padding', this.padding);
+            }
             this._paper.setSize(this.width, this.height);
         },
 
@@ -76,7 +81,7 @@
             this.el = this.make("div", { id: "blueprint", class: "blueprint" });
             container.append(this.el);
             var element = document.getElementById($(this.el).attr('id'));
-            this._paper = Raphael(element, this.width, this.height);
+            this._paper = Raphael(element,this.width, this.height);
             this.setMouseEvents();
         },
 
@@ -87,7 +92,7 @@
 
             _.extend(this, Backbone.Events);
             var instance = this;
-            
+
             $(this.el).click(function () {
                 instance.trigger("click", instance);
             });
@@ -116,14 +121,14 @@
         },
 
         registerOnMousemoveHandler: function (handler) {
-        	/// <summary>
-        	/// Adds mouse move event handler
-        	/// </summary>
-        	/// <param name="handler">function (senser,curpos) {} where curpos = { x: x_pos, y: y_pos}</param>
+            /// <summary>
+            /// Adds mouse move event handler
+            /// </summary>
+            /// <param name="handler">function (senser,curpos) {} where curpos = { x: x_pos, y: y_pos}</param>
 
             this.on("mousemove", handler);
         },
-            
+
         unregisterOnMousemoveHandler: function (handler) {
             /// <summary>
             /// Removes mouse move event handler

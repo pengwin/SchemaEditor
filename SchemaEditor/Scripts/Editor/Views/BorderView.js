@@ -6,10 +6,10 @@
     var BorderView = Backbone.View.extend({
 
         setDefaults: function () {
-        	/// <summary>
-        	/// Sets default values
+            /// <summary>
+            /// Sets default values
             /// </summary>
-            
+
             this.width = 1;
             this.height = 1;
             this.color = 'black';
@@ -18,9 +18,9 @@
         },
 
         initialize: function (attr) {
-        	/// <summary>
+            /// <summary>
             /// Constructor
-        	/// </summary>
+            /// </summary>
             /// <param name="attr">
             /// dictionary with params:
             /// {width,height} set border size
@@ -35,16 +35,16 @@
         },
 
         set: function (attr) {
-        	/// <summary>
+            /// <summary>
             /// Sets border attributes
-        	/// </summary>
+            /// </summary>
             /// <param name="attr">
             /// dictionary with params:
             /// {width, height} - set border size
             /// {step} size of side of border cell
             /// {color,opacity} set border lines parameters
             /// {line_thickness} set border lines width
-        	/// </param>
+            /// </param>
             if (!attr) {
                 return;
             }
@@ -70,14 +70,15 @@
         },
 
         renderTo: function (paper) {
-        	/// <summary>
+            /// <summary>
             /// Renders border on raphael paper
-        	/// </summary>
-        	/// <param name="paper">Raphael.paper</param>
+            /// </summary>
+            /// <param name="paper">Raphael.paper</param>
             if (this._rect) {
                 this._rect.remove();
             }
             this._rect = paper.rect(0, 0, this.width, this.height);
+            this._rect.attr("fill-opacity", 0.0);
             this._rect.attr('stroke', this.color);
             this._rect.attr('stroke-opacity', this.opacity);
             this._rect.attr('stroke-width', this.line_thickness);
@@ -86,9 +87,9 @@
         },
 
         render: function () {
-        	/// <summary>
+            /// <summary>
             /// Renders grid on stored this._paper if it exists
-        	/// </summary>
+            /// </summary>
             if (this._paper) {
                 this.renderTo(this._paper);
             }
