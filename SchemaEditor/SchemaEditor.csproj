@@ -73,11 +73,15 @@
   <ItemGroup>
     <Content Include="Content\Editor.css" />
     <Content Include="Content\PopupTemplate.css" />
+    <Content Include="Content\qunit.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\Editor\Editor.js" />
     <Content Include="Scripts\Editor\EditorApp.js" />
+    <Content Include="Scripts\Editor\Views\BlueprintView.js" />
     <Content Include="Scripts\Editor\Views\PopupView.js" />
+    <Content Include="Scripts\Editor\Views\Tests\BlueprintViewTests.js" />
+    <Content Include="Scripts\Editor\Views\Tests\ViewTests.js" />
     <Content Include="Scripts\Lib\Development\backbone.js" />
     <Content Include="Scripts\Lib\Development\jquery-1.7.1.js" />
     <Content Include="Scripts\Lib\Development\qunit.js" />
@@ -117,6 +121,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Editor\Views\Home\_PopupTemplate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Editor\Views\Home\ViewTests.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

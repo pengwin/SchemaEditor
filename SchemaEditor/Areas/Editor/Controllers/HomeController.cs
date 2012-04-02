@@ -16,5 +16,10 @@ namespace SchemaEditor.Areas.Editor.Controllers
             return View();
         }
 
+        public ActionResult ViewTests()
+        {
+            return View();
+        }
+
     }
 }
