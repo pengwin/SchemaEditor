@@ -78,6 +78,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\Editor\Editor.js" />
     <Content Include="Scripts\Editor\EditorApp.js" />
+    <Content Include="Scripts\Editor\Models\BlueprintModel.js" />
+    <Content Include="Scripts\Editor\Models\Tests\BlueprintModelTests.js" />
+    <Content Include="Scripts\Editor\Models\Tests\ModelsTests.js" />
     <Content Include="Scripts\Editor\Views\BlueprintView.js" />
     <Content Include="Scripts\Editor\Views\GridView.js" />
     <Content Include="Scripts\Editor\Views\PopupView.js" />
