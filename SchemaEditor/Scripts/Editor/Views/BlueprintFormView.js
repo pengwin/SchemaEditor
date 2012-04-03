@@ -2,6 +2,7 @@
 
     var popupTemplate =
      "<h3>Blueprint</h3>" +
+     "<div id='message' style='color:in red'></div>"+
      "<label for='width'>Width</label><input id='width' type='text'/>" +
      "<label for='height'>Height</label><input id='height' type='text'/>" +
      "<label for='margin'>Margin</label><input id='margin' type='text'/>" +

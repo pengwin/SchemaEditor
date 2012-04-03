@@ -44,10 +44,18 @@
     <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Models/Tests/BlueprintModelTests.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Models/Tests/ModelsTests.js")"></script>
 
+    <!-- tested controllers -->
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Controllers/BlueprintContoller.js")"></script>
+
+    <!-- controllers tests -->
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Controllers/Tests/BlueprintControllerTests.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Controllers/Tests/ControllerTests.js")"></script>
+
     <script>
         $(document).ready(function () {
             Editor.Views.Test.runTests();
             Editor.Models.Test.runTests();
+            Editor.Controllers.Test.runTests();
         });
     </script>
 

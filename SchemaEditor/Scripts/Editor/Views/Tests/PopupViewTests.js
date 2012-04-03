@@ -68,7 +68,7 @@
                 }
             });
 
-            var btn = $(testBenchId + " div.popup div#popup_controls input#popup_ok")
+            var btn = $(testBenchId + " div.popup div#popup_controls input#popup_ok");
 
             btn.trigger('click');
 
@@ -82,11 +82,11 @@
             var popup = new PopupView({
                 overlayView: popupOverlay,
                 cancelClick: function (sender) {
-                    equal(sender,popup,"cancel click was called");
+                    equal(sender, popup, "cancel click was called");
                 }
             });
 
-            var btn = $(testBenchId + " div.popup div#popup_controls input#popup_cancel")
+            var btn = $(testBenchId + " div.popup div#popup_controls input#popup_cancel");
             btn.trigger('click');
 
             setTimeout(function () {
