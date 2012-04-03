@@ -21,7 +21,7 @@
             }
         });
 
-        test("border constructor test", function () {
+        test("constructor test", function () {
             var border = new BorderView({ width: 400, height: 500 });
             border.renderTo(paper);
 
@@ -30,7 +30,7 @@
             equal(getBorderElement().attr('height'), 500, "test border height");
         });
 
-        test("border set test", function () {
+        test("set test", function () {
             var border = new BorderView({ width: 400, height: 500 });
             border.renderTo(paper);
 

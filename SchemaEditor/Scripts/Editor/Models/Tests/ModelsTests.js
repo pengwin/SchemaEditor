@@ -1,7 +1,8 @@
 ﻿Editor.Models.Test = (function (parent) {
 
     var runTests = function () {
-        Editor.Models.Test.BlueprintModelsTests();
+        Editor.Models.Test.BlueprintModelTests();
+        Editor.Models.Test.BlueprintStyleModelTests();
     };
 
     parent.runTests = runTests;

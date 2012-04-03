@@ -89,7 +89,7 @@
             expected_paths = expected_paths_SVG_syntax;
         }
 
-        test("grid constructor test", function () {
+        test("constructor test", function () {
             var grid = new GridView({ step: 5, width: 400, height: 400 });
             grid.renderTo(paper);
 
@@ -99,7 +99,7 @@
 
         });
 
-        test("grid set test", function () {
+        test("set test", function () {
             var grid = new GridView({ step: 20, width: 400, height: 400 });
             grid.renderTo(paper);
 

@@ -72,22 +72,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Editor.css" />
-    <Content Include="Content\PopupTemplate.css" />
+    <Content Include="Content\Popup.css" />
     <Content Include="Content\qunit.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Editor\Controllers\BlueprintContoller.js" />
     <Content Include="Scripts\Editor\Editor.js" />
     <Content Include="Scripts\Editor\EditorApp.js" />
     <Content Include="Scripts\Editor\Models\BlueprintModel.js" />
+    <Content Include="Scripts\Editor\Models\BlueprintStyleModel.js" />
     <Content Include="Scripts\Editor\Models\Tests\BlueprintModelTests.js" />
+    <Content Include="Scripts\Editor\Models\Tests\BlueprintStyleModelTests.js" />
     <Content Include="Scripts\Editor\Models\Tests\ModelsTests.js" />
+    <Content Include="Scripts\Editor\Views\BlueprintFormView.js" />
     <Content Include="Scripts\Editor\Views\BlueprintView.js" />
     <Content Include="Scripts\Editor\Views\GridView.js" />
+    <Content Include="Scripts\Editor\Views\PopupOverlayView.js" />
     <Content Include="Scripts\Editor\Views\PopupView.js" />
+    <Content Include="Scripts\Editor\Views\Tests\BlueprintFormViewTests.js" />
     <Content Include="Scripts\Editor\Views\Tests\BlueprintViewTests.js" />
     <Content Include="Scripts\Editor\Views\BorderView.js" />
     <Content Include="Scripts\Editor\Views\Tests\BorderViewTests.js" />
     <Content Include="Scripts\Editor\Views\Tests\GridViewTests.js" />
+    <Content Include="Scripts\Editor\Views\Tests\PopupOverlayViewTests.js" />
+    <Content Include="Scripts\Editor\Views\Tests\PopupViewTests.js" />
     <Content Include="Scripts\Editor\Views\Tests\ViewTests.js" />
     <Content Include="Scripts\Lib\Development\backbone.js" />
     <Content Include="Scripts\Lib\Development\jquery-1.7.1.js" />

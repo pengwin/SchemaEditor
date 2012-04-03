@@ -21,20 +21,24 @@
         });
 
 
-        test("blueprint tag creation test", function () {
+        test("constructor test", function () {
             var blueprintView1 = new BlueprintView({ container: $(testBenchId) });
             var blueprintView2 = new BlueprintView({ container: $(testBenchId) });
 
             equal(getBlueprintDivElement().length, 2, "test div quantity==2");
+            equal(getBlueprintSvgElement().length, 2, "test svg quantity==1");
         });
 
-        test("blueprint svg creation test", function () {
-            var blueprintView = new BlueprintView({ container: $(testBenchId) });
-
-            equal($(testBenchTag + " div.blueprint svg").length, 1, "test svg quantity==1");
+        test("constructor without container test", function () {
+            try {
+                var blueprintView = new BlueprintView();
+            }
+            catch (err) {
+                equal(err.message, "Container is not set", "expection has been thrown");
+            }
         });
 
-        test("blueprint size is set in constructor test", function () {
+        test("constructor with size test", function () {
             var blueprintView = new BlueprintView({ container: $(testBenchId), width: 250, height: 300, padding: 20 });
 
             // test div size
@@ -46,7 +50,7 @@
             equal(getBlueprintSvgElement().attr('height'), 300, "test svg height");
         });
 
-        test("blueprint set test", function () {
+        test("set test", function () {
             var blueprintView = new BlueprintView({ container: $(testBenchId), padding: 0 });
 
             blueprintView.set({ width: 250 });
@@ -78,7 +82,7 @@
             equal(getBlueprintDivElement().css('padding-top'), '20px', "test set padding: css padding-topt test");
         });
 
-        asyncTest("blueprint mouse click async test", function () {
+        asyncTest("mouse click async test", function () {
             expect(1);
             var blueprintView = new BlueprintView({ container: $(testBenchId) });
 
@@ -93,7 +97,7 @@
             }, 100);
         });
 
-        asyncTest("blueprint mouse move async test", function () {
+        asyncTest("mouse move async test", function () {
             expect(1);
             var blueprintView = new BlueprintView({ container: $(testBenchId) });
 

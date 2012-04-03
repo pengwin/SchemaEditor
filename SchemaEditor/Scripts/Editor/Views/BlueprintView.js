@@ -78,10 +78,13 @@
             /// </summary>
             /// <param name="container">DOM element for Raphael paper</param>
 
+            if (!container) {
+                throw { message: "Container is not set" };
+            }
             this.el = this.make("div", { id: "blueprint", class: "blueprint" });
             container.append(this.el);
             var element = document.getElementById($(this.el).attr('id'));
-            this._paper = Raphael(element,this.width, this.height);
+            this._paper = Raphael(element, this.width, this.height);
             this.setMouseEvents();
         },
 
