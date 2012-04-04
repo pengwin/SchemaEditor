@@ -28,12 +28,33 @@
             /// <param name="attrs">changed attributes</param>
             /// <returns type="">error if validation failed</returns>
 
+            if (isNaN(attrs.width)) {
+                return "width is Not a Number";
+            }
+
+            if (isNaN(attrs.height)) {
+                return "height is Not a Number";
+            }
+
+            if (isNaN(attrs.margin)) {
+                return "margin is Not a Number";
+            }
+
+            if (isNaN(attrs.widthLimit)) {
+                return "width limit is Not a Number";
+            }
+
+            if (isNaN(attrs.heightLimit)) {
+                return "height limit is Not a Number";
+            }
+
             if (attrs.widthLimit <= 0) {
                 return "width limit should be greater than 0";
             }
             if (attrs.heightLimit <= 0) {
                 return "height limit should be greater than 0";
             }
+
             if (attrs.width <= 0) {
                 return "width should be greater than 0";
             }

@@ -26,6 +26,7 @@
             /// {container} set container for raphael paper
             /// {width, height} - set blueprint size
             /// {color} - background color for blueprint
+            /// object supports events mouseup,mousedown,mousemove
             /// </param>
 
             this.setDefaults();
@@ -96,50 +97,18 @@
             _.extend(this, Backbone.Events);
             var instance = this;
 
-            $(this.el).click(function () {
-                instance.trigger("click", instance);
+            $(this.el).mouseup(function () {
+                instance.trigger("mouseup", instance);
+            });
+
+            $(this.el).mousedown(function () {
+                instance.trigger("mousedown", instance);
             });
 
             $(this.el).mousemove(function (event) {
                 instance.trigger("mousemove", instance, { x: event.pageX, y: event.pageY });
             });
         },
-
-        registerOnClickHandler: function (handler) {
-            /// <summary>
-            /// Adds mouse click event handler
-            /// </summary>
-            /// <param name="handler">function (sender) {}</param>
-
-            this.on("click", handler);
-        },
-
-        unregisterOnClickHandler: function (handler) {
-            /// <summary>
-            /// Removes mouse click event handler
-            /// </summary>
-            /// <param name="handler">function (sender) {}</param>
-
-            this.off("click", handler);
-        },
-
-        registerOnMousemoveHandler: function (handler) {
-            /// <summary>
-            /// Adds mouse move event handler
-            /// </summary>
-            /// <param name="handler">function (senser,curpos) {} where curpos = { x: x_pos, y: y_pos}</param>
-
-            this.on("mousemove", handler);
-        },
-
-        unregisterOnMousemoveHandler: function (handler) {
-            /// <summary>
-            /// Removes mouse move event handler
-            /// </summary>
-            /// <param name="handler"></param>
-
-            this.off("mousemove", handler);
-        }
     });
 
     parent.BlueprintView = BlueprintView;

@@ -40,6 +40,20 @@
             ok('true');
         });
 
+        test("put message test", function () {
+            var overlayView = new PopupOverlayMock();
+            var view = new BlueprintFormView({ overlayView: overlayView });
+
+            var message = "Test message";
+
+            view.putMessage(message);
+
+            var content = $(testBenchId + " div.popup div#popup_content");
+
+            equal($("#message", content).html(), message, "message text test");
+        });
+
+
         test("fill data test", function () {
             var overlayView = new PopupOverlayMock();
             var view = new BlueprintFormView({ overlayView: overlayView });

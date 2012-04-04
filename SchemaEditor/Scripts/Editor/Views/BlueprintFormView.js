@@ -2,7 +2,7 @@
 
     var popupTemplate =
      "<h3>Blueprint</h3>" +
-     "<div id='message' style='color:in red'></div>"+
+     "<div id='message'></div>" +
      "<label for='width'>Width</label><input id='width' type='text'/>" +
      "<label for='height'>Height</label><input id='height' type='text'/>" +
      "<label for='margin'>Margin</label><input id='margin' type='text'/>" +
@@ -29,6 +29,15 @@
             if (attrs.data) {
                 this.fillData(attrs.data);
             }
+        },
+
+        putMessage: function (message) {
+        	/// <summary>
+        	/// Put message on the form
+        	/// </summary>
+            /// <param name="message"></param>
+
+            $("div#popup_content div#message", this.el).html(message);
         },
 
         fillData: function (data) {

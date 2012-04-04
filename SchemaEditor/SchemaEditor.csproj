@@ -76,8 +76,10 @@
     <Content Include="Content\qunit.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\Editor\Controllers\BlueprintContoller.js" />
-    <Content Include="Scripts\Editor\Controllers\Tests\BlueprintControllerTests.js" />
+    <Content Include="Scripts\Editor\Controllers\BlueprintGraphicsController.js" />
+    <Content Include="Scripts\Editor\Controllers\BlueprintFormContoller.js" />
+    <Content Include="Scripts\Editor\Controllers\Tests\BlueprintGraphicsControllerTests.js" />
+    <Content Include="Scripts\Editor\Controllers\Tests\BlueprintFormControllerTests.js" />
     <Content Include="Scripts\Editor\Controllers\Tests\ControllerTests.js" />
     <Content Include="Scripts\Editor\Editor.js" />
     <Content Include="Scripts\Editor\EditorApp.js" />

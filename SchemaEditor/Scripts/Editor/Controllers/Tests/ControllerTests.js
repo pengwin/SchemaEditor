@@ -1,7 +1,8 @@
 ﻿Editor.Controllers.Test = (function (parent) {
 
     var runTests = function () {
-        Editor.Controllers.Test.BlueprintControllerTests();
+        Editor.Controllers.Test.BlueprintFormControllerTests();
+        Editor.Controllers.Test.BlueprintGraphicsControllerTests();
     };
 
     parent.runTests = runTests;

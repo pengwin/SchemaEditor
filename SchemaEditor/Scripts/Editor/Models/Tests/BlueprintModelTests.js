@@ -15,7 +15,7 @@
         });
 
         test("validate tests", function () {
-            var model = new BlueprintModel({width: 100, height: 100, widthLimit: 500, heightLimit: 500});
+            var model = new BlueprintModel({ width: 100, height: 100, widthLimit: 500, heightLimit: 500 });
             model.set('width', -5);
             equal(model.get('width'), 100, 'test validate: width bottom limit');
             model.set('height', -200);
@@ -24,6 +24,21 @@
             equal(model.get('width'), 100, 'test validate: width top limit');
             model.set('height', 800);
             equal(model.get('height'), 100, 'test validate: height top limit');
+        });
+
+        asyncTest("error callback async test test", function () {
+            expect(1);
+            var model = new BlueprintModel({ width: 100, height: 100, widthLimit: 500, heightLimit: 500 });
+
+            model.on('error', function (model, error) {
+                equal(error, 'width is Not a Number', "width NaN error occurred");
+            });
+
+            model.set('width', 'testNan');
+
+            setTimeout(function () {
+                start();
+            }, 100);
         });
     };
 

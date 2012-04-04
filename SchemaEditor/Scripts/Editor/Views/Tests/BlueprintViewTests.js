@@ -82,26 +82,26 @@
             equal(getBlueprintDivElement().css('padding-top'), '20px', "test set padding: css padding-topt test");
         });
 
-        asyncTest("mouse click async test", function () {
+        asyncTest("mouseup async test", function () {
             expect(1);
             var blueprintView = new BlueprintView({ container: $(testBenchId) });
 
-            blueprintView.registerOnClickHandler(function (sender) {
+            blueprintView.on('mouseup',function (sender) {
                 ok(true, "mouse click was called");
             });
 
-            getBlueprintDivElement().trigger('click'); // simulate click
+            getBlueprintDivElement().trigger('mouseup'); // simulate click
 
             setTimeout(function () {
                 start();
             }, 100);
         });
 
-        asyncTest("mouse move async test", function () {
+        asyncTest("mousemove async test", function () {
             expect(1);
             var blueprintView = new BlueprintView({ container: $(testBenchId) });
 
-            blueprintView.registerOnMousemoveHandler(function (sender, curpos) {
+            blueprintView.on('mousemove',function (sender, curpos) {
                 ok(true, "mouse move was called");
             });
 
