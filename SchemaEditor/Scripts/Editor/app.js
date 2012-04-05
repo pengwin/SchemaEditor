@@ -2,14 +2,15 @@
 
 define([
   'models/module',
-  'views/module'
-], function (Models, Views) {
+  'views/module',
+  'controllers/module'
+], function (Models, Views, Controllers) {
 
     var models = Models;
 
-    var views = views;
+    var views = Views;
 
-    var controllers = {};
+    var controllers = Controllers;
 
     return {
         Models: models,

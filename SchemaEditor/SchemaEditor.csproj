@@ -77,6 +77,9 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\Editor\app.js" />
+    <Content Include="Scripts\Editor\Controllers\Blueprint.js" />
+    <Content Include="Scripts\Editor\Controllers\module.js" />
+    <Content Include="Scripts\Editor\Controllers\Tests\BlueprintTest.js" />
     <Content Include="Scripts\Editor\main.js" />
     <Content Include="Scripts\Editor\Models\Blueprint.js" />
     <Content Include="Scripts\Editor\Models\BlueprintStyle.js" />
@@ -154,7 +157,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>56363</DevelopmentServerPort>
+          <DevelopmentServerPort>59548</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

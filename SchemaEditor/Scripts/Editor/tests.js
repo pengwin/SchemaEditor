@@ -4,8 +4,9 @@ define([
   'models/tests/blueprintstyletest',
   'views/tests/blueprinttest',
   'views/tests/gridtest',
-  'views/tests/bordertest'
-], function (testBlueprintModel, testBlueprintStyleModel, testBlueprintView, testGridView,testBorderView) {
+  'views/tests/bordertest',
+  'controllers/tests/blueprinttest'
+], function (testBlueprintModel, testBlueprintStyleModel, testBlueprintView, testGridView, testBorderView, testBlueprintController) {
 
     function runModelsTests() {
         testBlueprintModel.call();
@@ -18,8 +19,13 @@ define([
         testBorderView();
     };
 
+    function runControllersTests() {
+        testBlueprintController();
+    };
+
     return {
         runModelsTests: runModelsTests,
-        runViewsTests: runViewsTests
+        runViewsTests: runViewsTests,
+        runControllersTests: runControllersTests
     };
 });

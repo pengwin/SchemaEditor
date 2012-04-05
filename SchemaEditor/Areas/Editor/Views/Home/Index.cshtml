@@ -14,31 +14,7 @@
     @if (Html.IsDebugBuild())
     {
     
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/jquery-1.7.1.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/underscore.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/json2.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/backbone.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/raphael.js")"></script>
-        
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/EditorApp.js")"></script>
-
-    <!-- views -->
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/BlueprintView.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views//BorderView.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/GridView.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/PopupView.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/PopupOverlayView.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/BlueprintFormView.js")"></script>
-
-    <!-- models -->
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Models/BlueprintStyleModel.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Models/BlueprintModel.js")"></script>
-
-    <!-- controllers -->
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Controllers/BlueprintFormContoller.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Controllers/BlueprintGraphicsController.js")"></script>
-        
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Editor.js")"></script>
+    <script data-main="@Url.Content("~/Scripts/Editor/main.js")" src="@Url.Content("~/Scripts/Lib/require/require.js")"></script>
 
     } 
 </head>

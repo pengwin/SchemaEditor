@@ -68,7 +68,6 @@ footer
 }
 
 
-
 /* blueprint block */
 #blueprint_view 
 {
@@ -80,12 +79,13 @@ footer
     height: 200px;
     border: 1px solid rgba(0,0,0,0.1);
     background: white;
-    border-radius: 10px;
-    box-shadow:0px 0px 5px rgba(0,0,0,0.3);
+    padding: 10px;
     -webkit-border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
     -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+    box-shadow:0px 0px 5px rgba(0,0,0,0.3);   
 }
 
 

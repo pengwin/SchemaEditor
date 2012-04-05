@@ -1,7 +1,9 @@
 ﻿// Use this as a quick template for future modules
-define(['blueprint'], function (Blueprint) {
+define(['views/blueprint','views/grid','views/border'], function (Blueprint,Grid,Border) {
 
     return {
-        Blueprint: Blueprint
+        Blueprint: Blueprint,
+        Grid: Grid,
+        Border: Border
     };
 });

@@ -23,10 +23,8 @@ require.config({
 
 require([
   'tests'
-//'underscore',
-//'backbone',
-
 ], function (Tests) {
     Tests.runModelsTests();
     Tests.runViewsTests();
+    Tests.runControllersTests();
 });

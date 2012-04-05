@@ -25,7 +25,6 @@
 
         QUnit.test("constructor test", function () {
             var border = new BorderView({ blueprint: { _paper: paper }, width: 400, height: 500 });
-            border.renderTo(paper);
 
             QUnit.equal(getBorderElement().length, 1, "test border quantity==0 ");
             QUnit.equal(getBorderElement().attr('width'), 400, "test border width");
@@ -43,7 +42,6 @@
 
         QUnit.test("set test", function () {
             var border = new BorderView({ blueprint: { _paper: paper }, width: 400, height: 500 });
-            border.renderTo(paper);
 
             border.set({ width: 200 });
             QUnit.equal(getBorderElement().attr('width'), 200, "test border set width");
