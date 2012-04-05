@@ -4,7 +4,8 @@ define([
   'models/tests/blueprintstyletest',
   'views/tests/blueprinttest',
   'views/tests/gridtest',
-], function (testBlueprintModel, testBlueprintStyleModel, testBlueprintView, testGridView) {
+  'views/tests/bordertest'
+], function (testBlueprintModel, testBlueprintStyleModel, testBlueprintView, testGridView,testBorderView) {
 
     function runModelsTests() {
         testBlueprintModel.call();
@@ -14,6 +15,7 @@ define([
     function runViewsTests() {
         testBlueprintView();
         testGridView();
+        testBorderView();
     };
 
     return {
