@@ -85,9 +85,13 @@
     <Content Include="Scripts\Editor\Models\Tests\BlueprintTest.js" />
     <Content Include="Scripts\Editor\tests.js" />
     <Content Include="Scripts\Editor\tests_main.js" />
+    <Content Include="Scripts\Editor\Views\Blueprint.js" />
+    <Content Include="Scripts\Editor\Views\module.js" />
+    <Content Include="Scripts\Editor\Views\Tests\BlueprintTest.js" />
     <Content Include="Scripts\Lib\Backbone\backbone-amd.js" />
     <Content Include="Scripts\Lib\Backbone\backbone.js" />
     <Content Include="Scripts\Lib\jQuery\jquery-1.7.1.js" />
+    <Content Include="Scripts\Lib\Raphael\eve.js" />
     <Content Include="Scripts\Lib\require\order.js" />
     <Content Include="Scripts\Lib\QUnit\qunit.js" />
     <Content Include="Scripts\Lib\Raphael\raphael.js" />

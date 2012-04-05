@@ -1,9 +1,8 @@
 ﻿// Use this as a quick template for future modules
 define([
   '../blueprint',
-  'jquery',
   'qunit',
-], function (BlueprintModel, $) {
+], function (BlueprintModel) {
 
     var testBlueprint = function () {
 

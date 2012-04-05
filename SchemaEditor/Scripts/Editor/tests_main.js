@@ -7,6 +7,8 @@ require.config({
         underscore: '../Lib/Underscore/underscore-amd',
         backbone: '../Lib/Backbone/backbone-amd',
         qunit: '../Lib/QUnit/qunit',
+        eve: '../Lib/Raphael/eve',
+        raphael: '../Lib/Raphael/raphael',
 
         // Require.js plugins
         text: '../Lib/require/text',
@@ -16,8 +18,6 @@ require.config({
         // When you have HTML/CSS designers this aids in keeping them out of the js directory
         //templates: '../templates'
     }
-
-
 });
 
 
@@ -28,4 +28,5 @@ require([
 
 ], function (Tests) {
     Tests.runModelsTests();
+    Tests.runViewsTests();
 });

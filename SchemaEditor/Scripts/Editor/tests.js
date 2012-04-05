@@ -2,14 +2,20 @@
 define([
   'models/tests/blueprinttest',
   'models/tests/blueprintstyletest',
-], function (testBlueprintModel, testBlueprintStyleModel) {
+  'views/tests/blueprinttest',
+], function (testBlueprintModel, testBlueprintStyleModel,testBlueprintView) {
 
     function runModelsTests() {
-        testBlueprintModel();
+        testBlueprintModel.call();
         testBlueprintStyleModel();
     };
 
+    function runViewsTests() {
+        testBlueprintView();
+    };
+
     return {
-        runModelsTests: runModelsTests
+        runModelsTests: runModelsTests,
+        runViewsTests: runViewsTests
     };
 });
