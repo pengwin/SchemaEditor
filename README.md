@@ -1,7 +1,7 @@
 Intro
 ====================
 Simple editor for block diagrams.
-Project has been created only for education purposes.
+Project was created only for education purposes.
 
 Requirements:
 -------------
@@ -11,7 +11,7 @@ Requirements:
 Description
 ===========
 
-Project consist of two parts: 
+Project consists of two parts: 
 * Java Script frontend
 * ASP.NET MVC backend
 
