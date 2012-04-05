@@ -2,10 +2,8 @@
 define([
   '../blueprint',
   'jquery',
-  'underscore',
-  'backbone',
   'qunit',
-], function (BlueprintModel, $, _, Backbone) {
+], function (BlueprintModel, $) {
 
     var testBlueprint = function () {
 

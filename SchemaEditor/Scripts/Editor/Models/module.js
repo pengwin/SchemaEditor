@@ -1,13 +1,8 @@
 ﻿// Use this as a quick template for future modules
-define(['models/blueprint', ], function (Blueprint ) {
+define(['models/blueprint', 'models/blueprintstyle'], function (Blueprint,BlueprintStyle) {
            
     return {
         Blueprint: Blueprint,
-        Tests : {
-            testBlueprint: testBlueprint,
-            runTests : function() {
-                testBlueprint();
-            }
-        }
+        BlueprintStyle: BlueprintStyle
     };
 });

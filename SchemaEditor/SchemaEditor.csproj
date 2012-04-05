@@ -79,7 +79,9 @@
     <Content Include="Scripts\Editor\app.js" />
     <Content Include="Scripts\Editor\main.js" />
     <Content Include="Scripts\Editor\Models\Blueprint.js" />
+    <Content Include="Scripts\Editor\Models\BlueprintStyle.js" />
     <Content Include="Scripts\Editor\Models\module.js" />
+    <Content Include="Scripts\Editor\Models\Tests\BlueprintStyleTest.js" />
     <Content Include="Scripts\Editor\Models\Tests\BlueprintTest.js" />
     <Content Include="Scripts\Editor\tests.js" />
     <Content Include="Scripts\Editor\tests_main.js" />
