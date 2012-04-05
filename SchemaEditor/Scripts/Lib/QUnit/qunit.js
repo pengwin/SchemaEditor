@@ -1654,7 +1654,9 @@ QUnit.diff = (function() {
 
 // for CommonJS enviroments, export everything
 if ( typeof exports !== "undefined" || typeof require !== "undefined" ) {
-	extend(exports, QUnit);
+    //extend(exports, QUnit);
+    extend(window, QUnit);
+    window.QUnit = QUnit;
 }
 
 // get at whatever the global object is, like window in browsers

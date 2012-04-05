@@ -8,59 +8,10 @@
 <head>
     <title></title>
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/qunit.css")">
-    <!-- development lib-->
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/jquery-1.7.1.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/underscore.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/json2.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/backbone.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/raphael.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Lib/Development/qunit.js")"></script>
 
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/EditorApp.js")"></script>
+    <script data-main="@Url.Content("~/Scripts/Editor/tests_main.js")" src="@Url.Content("~/Scripts/Lib/require/require.js")"></script>
 
-    <!-- tested views -->
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/BlueprintView.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views//BorderView.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/GridView.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/PopupView.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/PopupOverlayView.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/BlueprintFormView.js")"></script>
-
-    <!-- views tests -->
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/Tests/BlueprintViewTests.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/Tests/GridViewTests.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/Tests/BorderViewTests.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/Tests/PopupViewTests.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/Tests/PopupOverlayViewTests.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/Tests/BlueprintFormViewTests.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Views/Tests/ViewTests.js")"></script>
     
-    <!-- tested models -->
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Models/BlueprintStyleModel.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Models/BlueprintModel.js")"></script>
-
-    <!-- models tests -->
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Models/Tests/BlueprintStyleModelTests.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Models/Tests/BlueprintModelTests.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Models/Tests/ModelsTests.js")"></script>
-
-    <!-- tested controllers -->
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Controllers/BlueprintFormContoller.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Controllers/BlueprintGraphicsController.js")"></script>
-
-    <!-- controllers tests -->
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Controllers/Tests/BlueprintFormControllerTests.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Controllers/Tests/BlueprintGraphicsControllerTests.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Editor/Controllers/Tests/ControllerTests.js")"></script>
-
-    <script>
-        $(document).ready(function () {
-            Editor.Views.Test.runTests();
-            Editor.Models.Test.runTests();
-            Editor.Controllers.Test.runTests();
-        });
-    </script>
-
 </head>
 <body>
 

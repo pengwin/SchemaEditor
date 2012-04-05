@@ -1,4 +1,9 @@
-﻿Editor.Models = (function (parent) {
+﻿// Use this as a quick template for future modules
+define([
+  'jquery',
+  'underscore',
+  'backbone',
+], function ($, _, Backbone) {
 
     /**
     * Model of blueprint
@@ -69,7 +74,5 @@
             }
         }
     });
-
-    parent.BlueprintModel = BlueprintModel;
-    return parent;
-} (Editor.Models || {}));
+    return BlueprintModel;
+});
