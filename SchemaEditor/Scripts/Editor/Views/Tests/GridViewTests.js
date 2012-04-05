@@ -10,6 +10,10 @@
         var getGridElement = function () { return $(testBenchTag + " svg path#grid"); };
         var paper;
 
+        var BlueprintMock = function (paper) {
+            this._paper = paper;
+        };
+
         module("GridView Tests", {
             setup: function () {
                 paper = Raphael(testBenchName, 400, 400);
@@ -90,9 +94,10 @@
         }
 
         test("constructor test", function () {
-            var grid = new GridView({ step: 5, width: 400, height: 400 });
-            grid.renderTo(paper);
 
+            var blueprint = new BlueprintMock(paper);
+
+            var grid = new GridView({ blueprintView: blueprint, step: 5, width: 400, height: 400 });
 
             equal(getGridElement().length, 1, "test grid quantity==0 ");
             equal(getGridElement().attr('d'), expected_paths.expected_step_5, "test grid path params");
@@ -100,9 +105,11 @@
         });
 
         test("set test", function () {
-            var grid = new GridView({ step: 20, width: 400, height: 400 });
-            grid.renderTo(paper);
 
+            var blueprint = new BlueprintMock(paper);
+
+            var grid = new GridView({ blueprintView: blueprint, step: 20, width: 400, height: 400 });
+            
             grid.set({ step: 5 });
             equal(getGridElement().attr('d'), expected_paths.expected_step_5, "test grid set step");
 

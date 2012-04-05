@@ -6,9 +6,13 @@
         var testBenchName = 'test_workbench';
         var testBenchId = "#" + testBenchName;
         var testBenchTag = "div" + testBenchId;
-        var getBorderElement = function() { return $(testBenchTag + " svg rect#border"); };
-        
+        var getBorderElement = function () { return $(testBenchTag + " svg rect#border"); };
+
         var paper;
+
+        var BlueprintMock = function (paper) {
+            this._paper = paper;
+        };
 
         module("BorderView Tests", {
             setup: function () {
@@ -22,8 +26,9 @@
         });
 
         test("constructor test", function () {
-            var border = new BorderView({ width: 400, height: 500 });
-            border.renderTo(paper);
+            var blueprint = new BlueprintMock(paper);
+            
+            var target = new BorderView({blueprintView: blueprint, width: 400, height: 500 });
 
             equal(getBorderElement().length, 1, "test border quantity==0 ");
             equal(getBorderElement().attr('width'), 400, "test border width");
@@ -31,8 +36,9 @@
         });
 
         test("set test", function () {
-            var border = new BorderView({ width: 400, height: 500 });
-            border.renderTo(paper);
+            var blueprint = new BlueprintMock(paper);
+
+            var border = new BorderView({ blueprintView: blueprint, width: 400, height: 500 });
 
             border.set({ width: 200 });
             equal(getBorderElement().attr('width'), 200, "test border set width");

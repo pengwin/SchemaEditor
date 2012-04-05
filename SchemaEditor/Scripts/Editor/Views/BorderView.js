@@ -23,12 +23,20 @@
             /// </summary>
             /// <param name="attr">
             /// dictionary with params:
+            /// {blueprint} blueprint to write
             /// {width,height} set border size
             /// {color,opacity} set border lines parameters
             /// {line_thickness} set border lines width
             /// </param>
 
             this.setDefaults();
+
+            if (!attr || !attr.blueprintView) {
+                throw { message: 'attribute \'blueprintView\' is not set' };
+            }
+
+            this._paper = attr.blueprintView._paper;
+
             if (attr) {
                 this.set(attr);
             }

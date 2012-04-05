@@ -28,6 +28,12 @@
             /// {line_thickness} set grid lines width
             /// {step} size of side of grid cell
             /// </param>
+            
+            if (!attr || !attr.blueprintView) {
+                throw { message: 'attribute \'blueprintView\' is not set' };
+            }
+
+            this._paper = attr.blueprintView._paper;
 
             this.setDefaults();
             if (attr) {
