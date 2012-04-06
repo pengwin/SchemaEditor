@@ -22,8 +22,10 @@
 
         QUnit.test("render test", function () {
             var target = new FormView();
-            target.render('Test', { name: 'test', pass: '123' });
+            var actual = target.render('Test', { name: 'test', pass: '123' });
             QUnit.ok(typeof target.el != 'undefined', 'element has been created');
+            QUnit.equal(actual,target.el, 'element has been returned');
+            
             QUnit.equal($('div.form_content', target.el).length, 1, 'form_content has been created');
             QUnit.equal($('div.form_content h3', target.el).html(), 'Test', 'form_title has been set');
 
@@ -63,11 +65,17 @@
             QUnit.equal($(target.el).css('display'), 'block', 'form has been shown');
         });
 
-        QUnit.test("show test", function () {
+
+        QUnit.test("update test", function () {
             var target = new FormView();
             target.render('Test', { name: 'test', pass: '123' });
-            target.hide();
-            QUnit.equal($(target.el).css('display'), 'none', 'form has been shown');
+
+            var expected = { name: 'test2', pass: '456' };
+
+            target.update(expected);
+
+            QUnit.equal($('div.form_content input#name', target.el).val(), expected.name, 'input name value has been changed');
+            QUnit.equal($('div.form_content input#pass', target.el).val(), expected.pass, 'input pass value has been changed');
         });
     }
 

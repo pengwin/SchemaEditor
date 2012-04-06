@@ -33,6 +33,7 @@ define([
             var controls = $('div.form_controls', this.el);
             this.submitButton = $('input#submit', controls);
             this.cancelButton = $('input#cancel', controls);
+            return this.el;
         },
 
         fetch: function () {
@@ -47,7 +48,13 @@ define([
             var result = {};
             var content = $('div.form_content', this.el);
             $("input[type='text']", content).each(function (index, item) {
-                result[$(item).attr('id')] = $(item).attr('value');
+                var id = $(item).attr('id');
+                var value = $(item).attr('value');
+                // if text field value is number
+                if (!isNaN(value)) { 
+                    value = parseFloat(value); // return number
+                }
+                result[id] = value;
             });
             return result;
         },
@@ -69,10 +76,10 @@ define([
         },
 
         show: function () {
-        	/// <summary>
-        	/// Shows form
+            /// <summary>
+            /// Shows form
             /// </summary>
-            
+
             if (typeof this.el == 'undefined') {
                 throw { message: "form hasn't been rendered" };
             }
@@ -80,14 +87,35 @@ define([
         },
 
         hide: function () {
-        	/// <summary>
-        	/// Hides form
+            /// <summary>
+            /// Hides form
             /// </summary>
-            
+
             if (typeof this.el == 'undefined') {
                 throw { message: "form hasn't been rendered" };
             }
             $(this.el).css('display', 'none');
+        },
+
+        update: function (attrs) {
+            /// <summary>
+            /// Updates form fields with members of data
+            /// </summary>
+            /// <param name="attrs"></param>
+
+            if (typeof this.el == 'undefined') {
+                throw { message: "form hasn't been rendered" };
+            }
+            if (typeof attrs == 'undefined') {
+                throw { message: "parameter 'attrs' not defined" };
+            }
+
+            var content = $('div.form_content', this.el);
+
+            $("input[type='text']", content).each(function (index, item) {
+                var id = $(item).attr('id');
+                $(item).attr('value', attrs[id]);
+            });
         }
 
     });

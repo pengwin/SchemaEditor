@@ -1,7 +1,8 @@
 ﻿
-define(['controllers/blueprint'], function (Blueprint) {
+define(['controllers/blueprint','controllers/formcontroller'], function (Blueprint,FormController) {
 
     return {
-        Blueprint: Blueprint
+        Blueprint : Blueprint,
+        FormController: FormController
     };
 });

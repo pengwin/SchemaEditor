@@ -59,18 +59,17 @@ define([
             if (attrs.heightLimit <= 0) {
                 return "height limit should be greater than 0";
             }
-
             if (attrs.width <= 0) {
                 return "width should be greater than 0";
             }
             if (attrs.width > this.get('widthLimit')) {
-                return "width should be less than" + this.get('widthLimit');
+                return "width should be less than " + this.get('widthLimit');
             }
             if (attrs.height <= 0) {
                 return "height should be greater than 0";
             }
             if (attrs.height > this.get('heightLimit')) {
-                return "width should be less than" + this.get('heightLimit');
+                return "width should be less than " + this.get('heightLimit');
             }
         }
     });
