@@ -12,11 +12,10 @@ require.config({
 
         // Require.js plugins
         text: '../Lib/require/text',
-        order: '../Lib/require/order'
+        order: '../Lib/require/order',
 
         // Just a short cut so we can put our html outside the js dir
-        // When you have HTML/CSS designers this aids in keeping them out of the js directory
-        //templates: '../templates'
+        templates: 'templates'
     }
 });
 
@@ -27,4 +26,5 @@ require([
     Tests.runModelsTests();
     Tests.runViewsTests();
     Tests.runControllersTests();
+    Tests.runFormsTests();
 });

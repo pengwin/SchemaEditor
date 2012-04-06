@@ -1,10 +1,11 @@
 ﻿
 
 define([
-  'models/module',
-  'views/module',
-  'controllers/module'
-], function (Models, Views, Controllers) {
+  'models/models',
+  'views/views',
+  'controllers/controllers',
+  'forms/forms'
+], function (Models, Views, Controllers, Forms) {
 
     var models = Models;
 
@@ -12,9 +13,12 @@ define([
 
     var controllers = Controllers;
 
+    var forms = Forms;
+
     return {
         Models: models,
         Views: views,
-        Controllers: controllers
+        Controllers: controllers,
+        Forms: forms        
     };
 });
