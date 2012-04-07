@@ -11,7 +11,7 @@
             setup: function () {
             },
             teardown: function () {
-                $(testBenchId + ' .popup__overlay').remove();
+                
             }
         });
 

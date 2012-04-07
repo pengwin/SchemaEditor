@@ -9,7 +9,7 @@
     <title>Editor</title>
     <link href='http://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet'  type='text/css'>
     <link href="@Url.Content("~/Content/Editor.css")" rel="stylesheet" type="text/css">
-    <link href="@Url.Content("~/Content/PopupTemplate.css")" rel="stylesheet" type="text/css">
+    <link href="@Url.Content("~/Content/Popup.css")" rel="stylesheet" type="text/css">
     
     @if (Html.IsDebugBuild())
     {
@@ -21,39 +21,13 @@
 <body>
     
     <header>
-    <ul id="tools" class="actions_block">
-        <li class="action">
-            <input id="pack_rect" type="radio" name="tool">
-            <label class="action_label" for="pack_rect">Draw:<br/>Rectangle<br/>Package</label>
-        </li>
-        <li class="action">
-            <input id="pack_circle" type="radio" name="tool">
-            <label class="action_label" for="pack_circle">Draw:<br/>Round<br/>Package</label>
-        </li>
-        <li class="action">
-            <input id="action_move" type="radio" name="tool">
-            <label class="action_label" for="action_move">Action:<br/>Move<br/>Element</label>
-        </li>
-        <li class="action">
-            <input id="action_delete" type="radio" name="tool">
-            <label class="action_label" for="action_delete">Action:<br/>Delete<br/>Element</label>
-            
-        </li>
-        <li class="action">
-            <input id="action_edit" type="radio" name="tool">
-            <label class="action_label" for="action_edit">Action:<br/>Edit<br/>Element</label>
-        </li>
-    </ul>
+   
     </header>
     <section id="content">
     <div id="blueprint_view">No blueprint</div>
     </section>
     <footer>
-    <ul id="history" class="actions_block">
-        <li class="action" >
-            <div class="action_label">Undo:<br/>Empty<br/>History</div>
-        </li>
-    </ul>
+    
     </footer>
 
 </body>

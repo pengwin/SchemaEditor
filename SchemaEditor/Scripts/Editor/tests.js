@@ -5,12 +5,13 @@ define([
   'views/tests/blueprinttest',
   'views/tests/gridtest',
   'views/tests/bordertest',
+  'views/tests/toolspaneltest',
   'controllers/tests/blueprinttest',
   'controllers/tests/formcontrollertest',
   'forms/tests/formfactorytest',
   'forms/tests/formviewtest'
 
-], function (testBlueprintModel, testBlueprintStyleModel, testBlueprintView, testGridView, testBorderView, testBlueprintController,testFormController, testFormFactory, testFormView) {
+], function (testBlueprintModel, testBlueprintStyleModel, testBlueprintView, testGridView, testBorderView, testToolsPanelView, testBlueprintController, testFormController, testFormFactory, testFormView) {
 
     function runModelsTests() {
         testBlueprintModel.call();
@@ -21,6 +22,7 @@ define([
         testBlueprintView();
         testGridView();
         testBorderView();
+        testToolsPanelView();
     };
 
     function runControllersTests() {

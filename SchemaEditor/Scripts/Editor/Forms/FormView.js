@@ -28,8 +28,8 @@ define([
 
             this.el = this.make("div", { class: "form" });
             var context = { caption: caption, modelKeys: Object.keys(attrs), model: attrs };
-            var renderedTemplate = _.template(form_template, context);
-            $(this.el).html(renderedTemplate);
+            var compiledTemplate = _.template(form_template, context);
+            $(this.el).html(compiledTemplate);
             var controls = $('div.form_controls', this.el);
             this.submitButton = $('input#submit', controls);
             this.cancelButton = $('input#cancel', controls);

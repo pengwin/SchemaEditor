@@ -1,5 +1,5 @@
 ﻿/* panel covers all screen*/
-.popup__overlay
+.form
 {
     display: none;
     position: fixed;
@@ -10,7 +10,7 @@
     background: rgba(0,0,0,.7);
     text-align: center;
 }
-.popup__overlay:after
+.form:after
 {
     display: inline-block;
     height: 100%;
@@ -18,26 +18,27 @@
     vertical-align: middle;
     content: '';
 }
-.popup
+
+
+.form_content
 {
-    min-width: 300px;
+    width: 300px;
     display: inline-block;
     position: relative;
     background: #efefef;
     vertical-align: middle;
 }
 
-#popup_content
+.form_content .form_controls
 {
-    padding: 20px;
-}
-
-#popup_controls
-{
+    width: 300px;
+    text-align: center;
+    position: relative;
     background: #808080;
+    vertical-align: middle;
 }
 
-input[type="button"]
+.form_content  input[type="button"]
 {
     width: 100px;
     padding: 6px 16px;
@@ -46,11 +47,28 @@ input[type="button"]
     color: #efefef;
 }
 
-input[type="button"]:hover
+.form_content input[type="button"]:hover
 {
     padding: 6px 16px;
     border: 0;
     color: #808080;
     background: #efefef;
+}
+
+.form_content  input[type="text"]
+{
+    width: 100px;
+    padding: 5px 5px;
+    margin: 2px;
+    border: 0;
+    background: #808080;
+    color: #efefef;
+}
+
+.form_content label 
+{
+    text-align: left;
+    display: inline-block;
+    width: 100px;
 }
 ​
