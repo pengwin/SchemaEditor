@@ -19,7 +19,7 @@ define([
         this._controllers = {};
     };
 
-    FormFactory.prototype.getFormForModel = function (formCaption, model) {
+    FormFactory.prototype.getFormForModel = function (formCaption, model, excludedFiels) {
         /// <summary>
         /// Gets form with caption and fields according to model attributes
         /// </summary>
@@ -34,7 +34,7 @@ define([
         if (typeof this._forms[id] == 'undefined') {
             this._forms[id] = new FormView();
         }
-        this._forms[id].render(formCaption + " #" + id, model.attributes);
+        this._forms[id].render(formCaption + " #" + id, model.attributes, excludedFiels);
         return this._forms[id];
     };
 

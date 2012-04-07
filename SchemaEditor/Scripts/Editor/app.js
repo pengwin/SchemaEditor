@@ -14,6 +14,8 @@ define([
         Forms: Forms,
 
         initBlueprint: function () {
+
+            this.curPos = { x: 0, y: 0 };
             // remove stub message
             $("#blueprint_view").html('');
 
@@ -28,9 +30,13 @@ define([
                 borderThickness: 5
             });
 
+            this.assetsStyleModel = new Models.AssetsStyle({
+
+            });
+
             // init form
             this.formFactory = new Forms.FormFactory();
-            this.blueprintForm = this.formFactory.getFormForModel('Edit Blueprint', this.blueprintModel);
+            this.blueprintForm = this.formFactory.getFormForModel('Edit Blueprint', this.blueprintModel, ['widthLimit', 'heightLimit']);
             $('body').append(this.blueprintForm.el);
             this.blueprintFormController = new Controllers.FormController(this.blueprintForm, this.blueprintModel);
 
@@ -61,6 +67,22 @@ define([
             }
         },
 
+        blueprintMouseDownHandler: function () {
+            if (this.toolsPanel.state.drawRect) {
+                var rectangleModel = new Models.Rectangle({ x: this.curPos.x - $("#blueprint svg").offset().left, y: this.curPos.y - $("#blueprint svg").offset().top, width: 10, height: 10 });
+                var rectangleView = new Views.Rectangle({ blueprint: this.blueprintView });
+                var rectangleController = new Controllers.Graphics(rectangleView, rectangleModel, this.assetsStyleModel);
+                
+            }
+        },
+
+        blueprintMouseMoveHandler: function (sender, curPos) {
+            this.curPos = curPos;
+            if (this.toolsPanel.state.actionEdit) {
+
+            }
+        },
+
         bindHandlers: function () {
 
             var self = this;
@@ -68,8 +90,17 @@ define([
                 self.updateBlueprintView();
             });
 
-            this.blueprintView.on('mouseup', function () {
+            this.blueprintView.on('mousedown', function () {
                 self.blueprintMouseUpHandler();
+            });
+
+            this.blueprintView.on('mouseup', function () {
+                self.blueprintMouseDownHandler();
+            });
+
+
+            this.blueprintView.on('mousemove', function (sender, curPos) {
+                self.blueprintMouseMoveHandler(sender, curPos);
             });
 
         },

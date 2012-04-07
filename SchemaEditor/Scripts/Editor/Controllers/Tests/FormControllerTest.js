@@ -68,10 +68,6 @@
             QUnit.equal($('div.form_content div#message', formView.el).html(), '', 'message error text is still empty');
             QUnit.equal(model.get('width'), 500, 'model width has been changed');
 
-            model.set('width', 200);
-
-            QUnit.equal(widthEdit.val(), 200, 'width text field has been changed');
-
             target.showForm();
 
             widthEdit.val('aqcp');
@@ -80,7 +76,7 @@
 
             QUnit.equal($(formView.el).css('display'), 'block', 'form is still visible');
             QUnit.equal($('div.form_content div#message', formView.el).html(), 'Error: width is Not a Number', 'message error text has been changed');
-            QUnit.equal(model.get('width'), 200, 'model width has been changed');
+            QUnit.equal(model.get('width'), 500, "model width hasn't been changed");
         });
 
     };

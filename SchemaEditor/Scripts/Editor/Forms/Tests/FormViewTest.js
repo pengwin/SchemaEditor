@@ -11,7 +11,7 @@
             setup: function () {
             },
             teardown: function () {
-                
+
             }
         });
 
@@ -24,8 +24,8 @@
             var target = new FormView();
             var actual = target.render('Test', { name: 'test', pass: '123' });
             QUnit.ok(typeof target.el != 'undefined', 'element has been created');
-            QUnit.equal(actual,target.el, 'element has been returned');
-            
+            QUnit.equal(actual, target.el, 'element has been returned');
+
             QUnit.equal($('div.form_content', target.el).length, 1, 'form_content has been created');
             QUnit.equal($('div.form_content h3', target.el).html(), 'Test', 'form_title has been set');
 
@@ -39,13 +39,14 @@
 
         QUnit.test("render with excluded fields test", function () {
             var target = new FormView();
-            var actual = target.render('Test', { name: 'test', pass: '123' },['name']);
+            var actual = target.render('Test', { name: 'test', pass: '123' }, ['name']);
             QUnit.ok(typeof target.el != 'undefined', 'element has been created');
             QUnit.equal(actual, target.el, 'element has been returned');
 
             QUnit.equal($('div.form_content input#name', target.el).length, 0, 'input name has been excluded');
 
         });
+
 
         QUnit.test("fetch test", function () {
             var target = new FormView();
@@ -57,6 +58,15 @@
 
             QUnit.equal(actual.name, expected.name, "attribute name fetched");
             QUnit.equal(actual.pass, expected.pass, "attribute pass fetched");
+        });
+
+        QUnit.test("fetch with excluded fields test", function () {
+            var target = new FormView();
+            target.render('Test', { name: 'test', pass: '123' }, ['name']);
+
+            var actual = target.fetch();
+
+            QUnit.equal(typeof actual.name, 'undefined');
         });
 
         QUnit.test("message test", function () {

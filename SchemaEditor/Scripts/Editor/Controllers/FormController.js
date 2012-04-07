@@ -17,24 +17,15 @@ define([
 
         this._errorOccured = false;
 
-        // model error handler
-        this.model.on('error', function (model, error) {
-            self.formView.message('Error: ' + error);
-            self._errorOccured = true;
-        });
-
-        // model change handler
-        this.model.on('change', function () {
-            var data = self.model.toJSON();
-            self.formView.update(data);
-            self.formView.hide();
-        });
-
         // form submit ok handler
         this.formView.submitButton.click(function () {
             var data = self.formView.fetch();
-            self.model.set(data);
-            if (!self.model.hasChanged() && !self._errorOccured) {
+            var error = self.model.validate(data);
+            if (error) {
+                self.formView.message('Error: ' + error);
+            }
+            else {
+                self.model.set(data);
                 self.formView.hide();
             }
         });
@@ -47,8 +38,8 @@ define([
     };
 
     FormController.prototype.showForm = function () {
-    	/// <summary>
-    	/// Shows linked form
+        /// <summary>
+        /// Shows linked form
         /// </summary>
 
         this.formView.message('');

@@ -33,23 +33,23 @@ define([
             /// <param name="attrs">changed attributes</param>
             /// <returns type="">error if validation failed</returns>
 
-            if (isNaN(attrs.width)) {
+            if (typeof attrs.width != 'undefined' && isNaN(attrs.width)) {
                 return "width is Not a Number";
             }
 
-            if (isNaN(attrs.height)) {
+            if (typeof attrs.height != 'undefined' && isNaN(attrs.height)) {
                 return "height is Not a Number";
             }
 
-            if (isNaN(attrs.margin)) {
+            if (typeof attrs.margin != 'undefined' && isNaN(attrs.margin)) {
                 return "margin is Not a Number";
             }
 
-            if (isNaN(attrs.widthLimit)) {
+            if (typeof attrs.widthLimit != 'undefined' && isNaN(attrs.widthLimit)) {
                 return "width limit is Not a Number";
             }
 
-            if (isNaN(attrs.heightLimit)) {
+            if (typeof attrs.heightLimit != 'undefined' && isNaN(attrs.heightLimit)) {
                 return "height limit is Not a Number";
             }
 

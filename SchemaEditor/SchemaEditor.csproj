@@ -90,9 +90,11 @@
     <Content Include="Scripts\Editor\main.js" />
     <Content Include="Scripts\Editor\Models\Blueprint.js" />
     <Content Include="Scripts\Editor\Models\BlueprintStyle.js" />
+    <Content Include="Scripts\Editor\Models\Rectangle.js" />
     <Content Include="Scripts\Editor\Models\Models.js" />
     <Content Include="Scripts\Editor\Models\Tests\BlueprintStyleTest.js" />
     <Content Include="Scripts\Editor\Models\Tests\BlueprintTest.js" />
+    <Content Include="Scripts\Editor\Models\Tests\RectangleTest.js" />
     <Content Include="Scripts\Editor\templates\form.htm" />
     <Content Include="Scripts\Editor\templates\tools.htm" />
     <Content Include="Scripts\Editor\tests.js" />
