@@ -4,7 +4,9 @@
 <% for (var i = 0; i < modelKeys.length; i++) { %>
     <% var key  = modelKeys[i]; %>
     <% var value  = model[key]; %>
-    <label for="<%= key %>" ><%= key %></label><input id="<%= key %>" type="text" value="<%= value %>"/><br/>
+    <% if (typeof excludedFields[key] == 'undefined') { %>
+        <label for="<%= key %>" ><%= key %></label><input id="<%= key %>" type="text" value="<%= value %>"/><br/>
+    <% } %>
 <% } %>
 <div class="form_controls">
 <input type="button" id="submit" value="Submit"/>

@@ -19,15 +19,25 @@ define([
             /// </summary>
 
         },
-        render: function (caption, attrs) {
+        render: function (caption, attrs, excludedAttrs) {
             /// <summary>
             /// Renders form with caption and fields with value from attrs
             /// </summary>
             /// <param name="caption"></param>
             /// <param name="attrs"></param>
+            /// <param name="excludedAttributes">array of attributes which won't be rendered (optional)</param>
 
             this.el = this.make("div", { class: "form" });
-            var context = { caption: caption, modelKeys: Object.keys(attrs), model: attrs };
+            var excludedFields = {};
+            // create object from array
+            // because I don't want to search excluded attribute 
+            // in array every iteration in template generator
+            if (typeof excludedAttrs != 'undefined') {
+                for (var i = 0; i < excludedAttrs.length; i++) {
+                    excludedFields[excludedAttrs[i]] = true;
+                }
+            }
+            var context = { caption: caption, modelKeys: Object.keys(attrs), model: attrs, excludedFields: excludedFields };
             var compiledTemplate = _.template(form_template, context);
             $(this.el).html(compiledTemplate);
             var controls = $('div.form_controls', this.el);
@@ -51,7 +61,7 @@ define([
                 var id = $(item).attr('id');
                 var value = $(item).attr('value');
                 // if text field value is number
-                if (!isNaN(value)) { 
+                if (!isNaN(value)) {
                     value = parseFloat(value); // return number
                 }
                 result[id] = value;

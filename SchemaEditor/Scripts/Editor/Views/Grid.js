@@ -97,7 +97,7 @@ define([
             }
             // adds horizontal lines
             for (var j = 0; j <= this.height; j += this.step) {
-                str += "M" + 0 + " " + j + "L" + this.height + " " + j;
+                str += "M" + 0 + " " + j + "L" + this.width + " " + j;
             }
             this._path = paper.path(str);
             this._path.attr('stroke', this.color);

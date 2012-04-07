@@ -94,11 +94,15 @@
     <Content Include="Scripts\Editor\Models\Tests\BlueprintStyleTest.js" />
     <Content Include="Scripts\Editor\Models\Tests\BlueprintTest.js" />
     <Content Include="Scripts\Editor\templates\form.htm" />
+    <Content Include="Scripts\Editor\templates\tools.htm" />
     <Content Include="Scripts\Editor\tests.js" />
     <Content Include="Scripts\Editor\tests_main.js" />
     <Content Include="Scripts\Editor\Views\Blueprint.js" />
     <Content Include="Scripts\Editor\Views\Border.js" />
+    <Content Include="Scripts\Editor\Views\Rectangle.js" />
     <Content Include="Scripts\Editor\Views\Grid.js" />
+    <Content Include="Scripts\Editor\Views\Tests\ToolsPanelTest.js" />
+    <Content Include="Scripts\Editor\Views\ToolsPanel.js" />
     <Content Include="Scripts\Editor\Views\Views.js" />
     <Content Include="Scripts\Editor\Views\Tests\BlueprintTest.js" />
     <Content Include="Scripts\Editor\Views\Tests\BorderTest.js" />

@@ -50,8 +50,10 @@ define([
     	/// <summary>
     	/// Shows linked form
         /// </summary>
-        
+
         this.formView.message('');
+        var data = this.model.toJSON();
+        this.formView.update(data);
         this._errorOccured = false;
         this.formView.show();
     };

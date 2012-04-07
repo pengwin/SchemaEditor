@@ -95,7 +95,7 @@ define([
 
         render: function () {
             /// <summary>
-            /// Renders grid on stored this._paper if it exists
+            /// Renders border on stored this._paper if it exists
             /// </summary>
             
             this.renderTo(this._paper);

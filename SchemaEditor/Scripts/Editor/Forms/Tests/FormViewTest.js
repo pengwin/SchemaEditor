@@ -37,6 +37,16 @@
             QUnit.equal($('div.form_controls input#submit', target.el).val(), 'Submit', 'submit button text has been set');
         });
 
+        QUnit.test("render with excluded fields test", function () {
+            var target = new FormView();
+            var actual = target.render('Test', { name: 'test', pass: '123' },['name']);
+            QUnit.ok(typeof target.el != 'undefined', 'element has been created');
+            QUnit.equal(actual, target.el, 'element has been returned');
+
+            QUnit.equal($('div.form_content input#name', target.el).length, 0, 'input name has been excluded');
+
+        });
+
         QUnit.test("fetch test", function () {
             var target = new FormView();
 
