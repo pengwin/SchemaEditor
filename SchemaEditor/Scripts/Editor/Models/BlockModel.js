@@ -1,4 +1,4 @@
-﻿// Use this as a quick template for future modules
+﻿
 define([
   'jquery',
   'underscore',
@@ -6,19 +6,16 @@ define([
 ], function ($, _, Backbone) {
 
     /**
-    * Model of rectangle block
+    * Model of blueprint block
     */
-    var EllipseModel = Backbone.Model.extend({
+    var BlockModel = Backbone.Model.extend({
 
         defaults: {
+            type: 'undefined',
             x: 0,
             y: 0,
             width: 200,
-            height: 200,
-            xLeftLimit: 0,
-            xRightLimit: 100,
-            yTopLimit: 0,
-            yBottomtLimit: 100
+            height: 200
         },
 
         initialize: function () {
@@ -26,6 +23,10 @@ define([
             /// constructor
             /// </summary>
 
+            this.xLeftLimit = 0;
+            this.xRightLimit = 100;
+            this.yTopLimit = 0;
+            this.yBottomLimit = 100;
         },
 
         validate: function (attrs) {
@@ -51,51 +52,51 @@ define([
                 return "x is Not a Number";
             }
 
-            if (typeof attrs.xLeftLimit != 'undefined' && isNaN(attrs.xLeftLimit)) {
-                return "x left limit is Not a Number";
-            }
-
-            if (typeof attrs.yTopLimit != 'undefined' && isNaN(attrs.yTopLimit)) {
-                return "y top limit is Not a Number";
-            }
-
-            if (typeof attrs.xRightLimit != 'undefined' && isNaN(attrs.xRightLimit)) {
-                return "x right limit is Not a Number";
-            }
-
-            if (typeof attrs.yBottomLimit != 'undefined' && isNaN(attrs.yBottomLimit)) {
-                return "y bottom limit is Not a Number";
-            }
-
             // check horizontal parameters
-            
-            if (attrs.x <= this.get('xLeftLimit')) {
+
+            if (attrs.x < this.xLeftLimit) {
                 return "left border out of bound ";
             }
 
-            if (this.get('x') + attrs.width > this.get('xRightLimit')) {
+            if ( (this.attributes.x + attrs.width) > this.xRightLimit) {
+                return "right border out of bound ";
+            }
+
+            if ((attrs.x + this.attributes.width) > this.xRightLimit) {
+                return "right border out of bound ";
+            }
+
+            if ((attrs.x + attrs.width) > this.xRightLimit) {
                 return "right border out of bound ";
             }
 
             if (attrs.width <= 0) {
                 return "width should be greater than 0";
             }
-            
+
             // check vertical parameters
-            
-            if (attrs.y <= this.get('yTopLimit')) {
+
+            if (attrs.y < this.yTopLimit) {
                 return "top border out of bound ";
             }
 
-            if (this.get('y') + attrs.height > this.get('yBottomLimit')) {
+            if ( (this.attributes.y + attrs.height) > this.yBottomLimit) {
+                return "bottom border out of bound ";
+            }
+
+            if ((attrs.y + this.attributes.height) > this.yBottomLimit) {
+                return "bottom border out of bound ";
+            }
+
+            if ((attrs.y + attrs.height) > this.yBottomLimit) {
                 return "bottom border out of bound ";
             }
 
             if (attrs.height <= 0) {
                 return "height should be greater than 0";
             }
-            
+
         }
     });
-    return EllipseModel;
+    return BlockModel;
 });

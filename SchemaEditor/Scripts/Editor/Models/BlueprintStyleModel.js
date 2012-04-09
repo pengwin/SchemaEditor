@@ -18,7 +18,13 @@ define([
             borderThickness: 1,
 
             borderOpacity: 0.8,
-            gridOpacity: 0.4
+            gridOpacity: 0.4,
+
+            assetsLineThickness: 4,
+            assetsColor: 'black',
+            assetsOpacity: 1,
+            assetsLineColor: 'black',
+            assetsLineOpacity: 1
         },
 
         initialize: function () {

@@ -1,13 +1,16 @@
-﻿// Use this as a quick template for future modules
-define(['views/blueprint', 'views/grid', 'views/border', 'views/toolspanel', 'views/rectangle', 'views/ellipse'], 
-    function (Blueprint,Grid,Border,ToolsPanel,Rectangle,Ellipse) {
+﻿
+define(['views/toolspanel', 'views/forms/formview','views/graphics/blueprintgraphics','views/graphics/rectanglegraphics'],
+    function (ToolsPanel, FormView,BlueprintGraphics,RectangleGraphics) {
 
-    return {
-        Blueprint: Blueprint,
-        Grid: Grid,
-        Border: Border,
-        ToolsPanel: ToolsPanel,
-        Rectangle : Rectangle,
-        Ellipse : Ellipse
-    };
-});
+        return {
+            ToolsPanel: ToolsPanel,
+            
+            Forms : {
+                FormView : FormView
+            },
+            Graphics : {
+                BlueprintGraphics: BlueprintGraphics,
+                RectangleGraphics: RectangleGraphics
+            }
+        };
+    });

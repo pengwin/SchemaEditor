@@ -15,7 +15,7 @@ define([
             height: 200,
             widthLimit: 1000,
             heightLimit: 1000,
-            margin: 20,
+            padding: 20,
             gridStep: 20
         },
 
@@ -41,8 +41,8 @@ define([
                 return "height is Not a Number";
             }
 
-            if (typeof attrs.margin != 'undefined' && isNaN(attrs.margin)) {
-                return "margin is Not a Number";
+            if (typeof attrs.padding != 'undefined' && isNaN(attrs.padding)) {
+                return "padding is Not a Number";
             }
 
             if (typeof attrs.widthLimit != 'undefined' && isNaN(attrs.widthLimit)) {

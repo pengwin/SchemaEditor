@@ -1,6 +1,6 @@
 ﻿// Use this as a quick template for future modules
 define([
-  '../blueprintstyle',
+  '../blueprintstylemodel',
   'qunit',
 ], function (BlueprintStyleModel) {
     

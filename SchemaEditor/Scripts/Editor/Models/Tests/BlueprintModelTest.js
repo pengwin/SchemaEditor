@@ -1,6 +1,6 @@
 ﻿// Use this as a quick template for future modules
 define([
-  '../blueprint',
+  '../blueprintmodel',
   'qunit',
 ], function (BlueprintModel) {
 
@@ -12,7 +12,7 @@ define([
             var model = new BlueprintModel();
             QUnit.equal(model.get('width'), 200, 'test defaults: width');
             QUnit.equal(model.get('height'), 200, 'test defaults: height');
-            QUnit.equal(model.get('margin'), 20, 'test defaults: margin');
+            QUnit.equal(model.get('padding'), 20, 'test defaults: margin');
             QUnit.equal(model.get('gridStep'), 20, 'test defaults: grid step');
         });
 

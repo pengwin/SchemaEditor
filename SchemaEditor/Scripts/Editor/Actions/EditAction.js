@@ -4,7 +4,7 @@ define([
   'underscore',
   'backbone'
 ], function ($, _, Backbone) {
-    var FormController = function (formView, model) {
+    var EditAction = function (formView, model) {
         /// <summary>
         /// Links form and model
         /// handles form button click events and model change event
@@ -14,8 +14,6 @@ define([
         this.model = model;
 
         var self = this;
-
-        this._errorOccured = false;
 
         // form submit ok handler
         this.formView.submitButton.click(function () {
@@ -37,7 +35,7 @@ define([
 
     };
 
-    FormController.prototype.showForm = function () {
+    EditAction.prototype.execute = function () {
         /// <summary>
         /// Shows linked form
         /// </summary>
@@ -45,9 +43,10 @@ define([
         this.formView.message('');
         var data = this.model.toJSON();
         this.formView.update(data);
-        this._errorOccured = false;
         this.formView.show();
+
+        return true;
     };
 
-    return FormController;
+    return EditAction;
 });

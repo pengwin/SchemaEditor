@@ -22,14 +22,13 @@
             var actual = target.render();
             QUnit.ok(typeof target.el != 'undefined', 'element has been created');
             QUnit.equal(actual, target.el, 'element has been returned');
-            QUnit.equal($("input[name='tool']", target.el).length, 5, 'input radio has been initialized');
+            QUnit.equal($("input[name='tool']", target.el).length, 4, 'input radio has been initialized');
 
         });
 
         QUnit.test('refreshState test', function () {
 
             var target = new ToolsPanel();
-            target.render();
 
             $("input[name='tool']#action_edit", target.el).attr('checked', true);
 

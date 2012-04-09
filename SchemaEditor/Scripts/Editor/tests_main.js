@@ -21,10 +21,24 @@ require.config({
 
 
 require([
-  'tests'
-], function (Tests) {
-    Tests.runModelsTests();
-    Tests.runViewsTests();
-    Tests.runControllersTests();
-    Tests.runFormsTests();
+  'models/tests/blueprintmodeltest',
+  'models/tests/blueprintstylemodeltest',
+  'actions/tests/editactiontest',
+  'views/graphics/tests/blueprintgraphicstest',
+  'views/tests/toolspaneltest',
+  'views/forms/tests/formviewtest',
+  'widgets/tests/blueprintwidgettest',
+  'widgets/tests/rectanglewidgettest',
+  'models/tests/rectanglemodeltest'
+], function (testBlueprintModel, testBlueprintStyleModel, testEditAction, testBlueprintGraphics, testToolsPanel, testFormView) {
+    testBlueprintModel();
+    testBlueprintStyleModel();
+    
+    testEditAction();
+    testBlueprintGraphics();
+    testToolsPanel();
+    testFormView();
+    testBlueprintWidget();
+    testRectangleWidget();
+    testRectangleModel();
 });

@@ -76,39 +76,38 @@
     <Content Include="Content\qunit.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Editor\Actions\DrawRectAction.js" />
     <Content Include="Scripts\Editor\app.js" />
-    <Content Include="Scripts\Editor\Controllers\Blueprint.js" />
-    <Content Include="Scripts\Editor\Controllers\Controllers.js" />
-    <Content Include="Scripts\Editor\Controllers\FormController.js" />
-    <Content Include="Scripts\Editor\Controllers\Tests\BlueprintTest.js" />
-    <Content Include="Scripts\Editor\Controllers\Tests\FormControllerTest.js" />
-    <Content Include="Scripts\Editor\Forms\FormFactory.js" />
-    <Content Include="Scripts\Editor\Forms\FormView.js" />
-    <Content Include="Scripts\Editor\Forms\Forms.js" />
-    <Content Include="Scripts\Editor\Forms\Tests\FormFactoryTest.js" />
-    <Content Include="Scripts\Editor\Forms\Tests\FormViewTest.js" />
+    <Content Include="Scripts\Editor\Actions\Actions.js" />
+    <Content Include="Scripts\Editor\Actions\EditAction.js" />
+    <Content Include="Scripts\Editor\Actions\Tests\EditActionTest.js" />
+    <Content Include="Scripts\Editor\Models\RectangleModel.js" />
+    <Content Include="Scripts\Editor\Views\Forms\FormView.js" />
+    <Content Include="Scripts\Editor\Views\Forms\Tests\FormViewTest.js" />
     <Content Include="Scripts\Editor\main.js" />
-    <Content Include="Scripts\Editor\Models\Blueprint.js" />
-    <Content Include="Scripts\Editor\Models\BlueprintStyle.js" />
-    <Content Include="Scripts\Editor\Models\Rectangle.js" />
+    <Content Include="Scripts\Editor\Models\BlueprintModel.js" />
+    <Content Include="Scripts\Editor\Models\BlueprintStyleModel.js" />
     <Content Include="Scripts\Editor\Models\Models.js" />
-    <Content Include="Scripts\Editor\Models\Tests\BlueprintStyleTest.js" />
-    <Content Include="Scripts\Editor\Models\Tests\BlueprintTest.js" />
-    <Content Include="Scripts\Editor\Models\Tests\RectangleTest.js" />
+    <Content Include="Scripts\Editor\Models\Tests\BlueprintStyleModelTest.js" />
+    <Content Include="Scripts\Editor\Models\Tests\BlueprintModelTest.js" />
+    <Content Include="Scripts\Editor\Models\Tests\RectangleModelTest.js" />
     <Content Include="Scripts\Editor\templates\form.htm" />
     <Content Include="Scripts\Editor\templates\tools.htm" />
-    <Content Include="Scripts\Editor\tests.js" />
     <Content Include="Scripts\Editor\tests_main.js" />
-    <Content Include="Scripts\Editor\Views\Blueprint.js" />
-    <Content Include="Scripts\Editor\Views\Border.js" />
-    <Content Include="Scripts\Editor\Views\Rectangle.js" />
-    <Content Include="Scripts\Editor\Views\Grid.js" />
+    <Content Include="Scripts\Editor\Views\Graphics\BlueprintGraphics.js" />
+    <Content Include="Scripts\Editor\Views\Graphics\Ellipse.js" />
+    <Content Include="Scripts\Editor\Views\Graphics\RectangleGraphics.js" />
+    <Content Include="Scripts\Editor\Views\Graphics\BaseGraphics.js" />
+    <Content Include="Scripts\Editor\Views\Graphics\GridGraphics.js" />
     <Content Include="Scripts\Editor\Views\Tests\ToolsPanelTest.js" />
     <Content Include="Scripts\Editor\Views\ToolsPanel.js" />
     <Content Include="Scripts\Editor\Views\Views.js" />
-    <Content Include="Scripts\Editor\Views\Tests\BlueprintTest.js" />
-    <Content Include="Scripts\Editor\Views\Tests\BorderTest.js" />
-    <Content Include="Scripts\Editor\Views\Tests\GridTest.js" />
+    <Content Include="Scripts\Editor\Views\Graphics\Tests\BlueprintGraphicsTest.js" />
+    <Content Include="Scripts\Editor\Widgets\BlueprintWidget.js" />
+    <Content Include="Scripts\Editor\Widgets\RectangleWidget.js" />
+    <Content Include="Scripts\Editor\Widgets\Tests\BlueprintWidgetTest.js" />
+    <Content Include="Scripts\Editor\Widgets\Tests\RectangleWidgetTest.js" />
+    <Content Include="Scripts\Editor\Widgets\Widgets.js" />
     <Content Include="Scripts\Lib\Backbone\backbone-amd.js" />
     <Content Include="Scripts\Lib\Backbone\backbone.js" />
     <Content Include="Scripts\Lib\jQuery\jquery-1.7.1.js" />
@@ -171,7 +170,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>59548</DevelopmentServerPort>
+          <DevelopmentServerPort>53656</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

@@ -11,9 +11,9 @@ define([
     var ToolsPanel = Backbone.View.extend({
 
         initialize: function () {
-        	/// <summary>
-        	/// Constructor
-        	/// </summary>
+            /// <summary>
+            /// Constructor
+            /// </summary>
 
             this.state = {
                 actionEdit: false,
@@ -22,7 +22,7 @@ define([
                 drawRect: false,
                 drawCircle: false
             };
-
+            this.render();
         },
 
         render: function () {
@@ -36,7 +36,7 @@ define([
             var context = {};
             var compiledTemplate = _.template(tools_template, context);
             $(this.el).html(compiledTemplate);
-            
+
             this._actionEdit = $("input[name='tool']#action_edit", this.el);
             this._actionMove = $("input[name='tool']#action_move", this.el);
             this._actionDelete = $("input[name='tool']#action_delete", this.el);
@@ -47,7 +47,7 @@ define([
             var clickHandler = function () {
                 self.refreshState();
             };
-            
+
             this._actionEdit.change(clickHandler);
             this._actionMove.change(clickHandler);
             this._actionDelete.change(clickHandler);
@@ -58,17 +58,15 @@ define([
         },
 
         refreshState: function () {
-        	/// <summary>
-        	/// Refreshes state object
+            /// <summary>
+            /// Refreshes state object
             /// </summary>
-            
-            this.state = {
-                actionEdit: this._actionEdit.is(':checked'),
-                actionMove: this._actionMove.is(':checked'),
-                actionDelete: this._actionDelete.is(':checked'),
-                drawRect: this._drawRect.is(':checked'),
-                drawCircle: this._drawCircle.is(':checked')
-            };
+
+            this.state.actionEdit = this._actionEdit.is(':checked');
+            this.state.actionMove = this._actionMove.is(':checked');
+            this.state.actionDelete = this._actionDelete.is(':checked');
+            this.state.drawRect = this._drawRect.is(':checked');
+            this.state.drawCircle = this._drawCircle.is(':checked');
         }
 
     });

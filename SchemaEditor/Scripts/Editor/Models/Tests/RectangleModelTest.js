@@ -1,6 +1,6 @@
 ﻿// Use this as a quick template for future modules
 define([
-  '../rectangle',
+  '../rectanglemodel',
   'qunit',
 ], function (RectangleModel) {
 
@@ -17,7 +17,7 @@ define([
         });
 
         QUnit.test("validate tests", function () {
-            var model = new RectangleModel({ x: 20,y: 20,width: 100, height: 100});
+            var model = new RectangleModel({ x: 20, y: 20, width: 100, height: 100 });
             model.set('width', -5);
             QUnit.equal(model.get('width'), 100, 'test validate: width bottom limit');
             model.set('height', -200);
@@ -32,5 +32,6 @@ define([
 
     };
 
+    window.testRectangleModel = testRectangleModel;
     return testRectangleModel;
 });

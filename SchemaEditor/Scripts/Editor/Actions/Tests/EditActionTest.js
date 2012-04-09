@@ -1,15 +1,15 @@
 ﻿define([
-  '../formcontroller',
-  '../../models/blueprint',
-  '../../forms/formview',
+  'actions/editaction',
+  'models/blueprintmodel',
+  'views/forms/formview',
   'qunit',
-], function (FormController, BlueprintModel, FormView) {
+], function (EditAction, BlueprintModel, FormView) {
 
-    var testFormController = function () {
+    var testEditAction = function () {
 
         var testBenchId = "#test_workbench";
 
-        QUnit.module("FormController Tests", {
+        QUnit.module("EditAction Tests", {
             setup: function () {
             },
             teardown: function () {
@@ -23,19 +23,19 @@
             var formView = new FormView();
             formView.render('Blueprint', model.attributes);
 
-            var target = new FormController(formView, model);
+            var target = new EditAction(formView, model);
 
             QUnit.ok('true');
         });
 
-        QUnit.test('showForm test', function () {
+        QUnit.test('execute test', function () {
 
             var model = new BlueprintModel();
             var formView = new FormView();
             formView.render('Blueprint', model.attributes);
 
-            var target = new FormController(formView, model);
-            target.showForm();
+            var target = new EditAction(formView, model);
+            target.execute();
 
             QUnit.equal($(formView.el).css('display'), 'block', 'form has been shown');
 
@@ -47,8 +47,8 @@
             var formView = new FormView();
             formView.render('Blueprint', model.attributes);
 
-            var target = new FormController(formView, model);
-            target.showForm();
+            var target = new EditAction(formView, model);
+            target.execute();
 
             var sumbitButton = $('div.form_controls input#submit', formView.el);
             var cancelButton = $('div.form_controls input#cancel', formView.el);
@@ -58,7 +58,7 @@
 
             QUnit.equal($(formView.el).css('display'), 'none', 'form has been hidden without changes');
 
-            target.showForm();
+            target.execute();
 
             widthEdit.val(500);
 
@@ -68,7 +68,7 @@
             QUnit.equal($('div.form_content div#message', formView.el).html(), '', 'message error text is still empty');
             QUnit.equal(model.get('width'), 500, 'model width has been changed');
 
-            target.showForm();
+            target.execute();
 
             widthEdit.val('aqcp');
 
@@ -81,5 +81,5 @@
 
     };
 
-    return testFormController;
+    return testEditAction;
 });
